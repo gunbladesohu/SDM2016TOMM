@@ -1,4 +1,15 @@
 language: ruby
 rvm:
-  - 2.2
-install: gem install rails
+- 2.3.0
+notification:
+  email: false
+script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+deploy:
+  provider: heroku
+  api_key: "dc4adac0-6490-4e98-b3f0-aa1adafd0ee8"
+    #secure: xnPhuQ9VR0XMjv2NWjAKYJEwTb0whK42xPD1tgdcmA29bfUAY6rxU1edAhxWOOIbMahB+I2Urvknxin/Ev/ps2U5BzTO/u8LtobMGMNSZAkPAzTXUu6HEvpOO2rEmIG2R6D6lnRmat+ZR4dYu6FcTG/iIj96qAarX31+CSNO0BaPT5eOOJHAwaoDTPMy1Bd/HCh2G7+O2TTh5Le66RcnxX0Yn3JUsc7fhgCSKTtdsakonYQ5UN9qj3sv7Al3CmvvppEkOX4CDGXnkBbTCYTylQyTEDCnUZa5+PFSLAyzVSr3BDTBv7dDT9I4YSWZ/8vuq7aFRpVfgPUV1+OFYFGwwwfk//f48QB3DnS+Lt1DqGrDgWqCk/GeQ6Vw5mdkasHcp934XluDffYB/P66MAL4KLs3eKgIt6rdbFWuhW0+LaiGrTNQUFq2PipHI1g+UkanQj/5YsbPeDs8tLcK1MnHnFvJh2qZfOhDB8zQMVcDR9uRhu1E0Cad28G//4XZ0vnV7SWIfgzOcKxfEbAs2kfcP5BBzMqe7qNiUMtlejinH2gUyXUsv2NNeiJ1v1TJVjm6mQp8MDzkJjU9dUzYp25n/JlWQi7uivrqA52kGkup5IL6z70slyO6HLgc11BTyW8e4aD1vnbXXrUzOlGlxGOjpWGds+Ub0/IBGmOev0KKc+M=
+  app: serlertest
+  on:
+    repo: yuxiang8931/serlertest
