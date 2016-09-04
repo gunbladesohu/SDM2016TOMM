@@ -1,2 +1,5 @@
 language: ruby
-ruby: "2.0"
+rvm:
+  - 2.2
+  - jruby
+  - rbx-2
