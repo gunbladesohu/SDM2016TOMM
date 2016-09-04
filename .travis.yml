@@ -1,3 +1,2 @@
 language: ruby
-ruby: "2.3.0p0"
-sudo gem install bundler
+ruby: "2.3"
