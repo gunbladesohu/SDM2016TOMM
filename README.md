@@ -24,3 +24,6 @@ Things you may want to cover:
 * ...
 add feature1
 little change for travis ci
+little change for travis and heroku
+little change for travis and heroku
+little change for travis and heroku
