@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Methodologies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @methodologies.each do |methodology| %>
+      <tr>
+        <td><%= methodology.id %></td>
+        <td><%= methodology.methodology_name %></td>
+        <td><%= methodology.description %></td>
+        <td><%= link_to 'Show', methodology %></td>
+        <td><%= link_to 'Edit', edit_methodology_path(methodology) %></td>
+        <td><%= link_to 'Destroy', methodology, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Methodology', new_methodology_path %>

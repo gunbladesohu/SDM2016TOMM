@@ -30,3 +30,4 @@ Methodology.create(methodology_name:"Aspect Oriented Development",description:"x
 Methodology.create(methodology_name:"Valuse Driven Development",description:"xxx")
 Methodology.create(methodology_name:"Product Driven Development",description:"xxx")
 Methodology.create(methodology_name:"Agile",description:"xxx")
+Se_method.create([{methodology_id:"5",method_name:"TDD"},{methodology_id:"7",method_name:"BDD"}])

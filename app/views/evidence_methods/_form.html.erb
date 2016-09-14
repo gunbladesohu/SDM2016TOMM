@@ -1,0 +1,17 @@
+<%= form_for(evidence_method) do |f| %>
+  <% if evidence_method.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(evidence_method.errors.count, "error") %> prohibited this evidence_method from being saved:</h2>
+
+      <ul>
+      <% evidence_method.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

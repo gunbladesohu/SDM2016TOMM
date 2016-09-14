@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Papers</h1>
+
+<table>
+
+
+  <tbody>
+    <% @papers.each do |paper| %>
+      <tr>
+        <td><%= paper.id %></td>
+        <td><%= paper.user_id %></td>
+        <td><%= paper.submitted_date %></td>
+        <td><%= paper.paper_status%></td>
+        <td><%= paper.moderator_id %></td>
+        <td><%= paper.moderated_time %></td>
+        <td><%= paper.analyst_id %></td>
+        <td><%= paper.analysed_time %></td>
+        <td><%= paper.authors %></td>
+        <td><%= paper.title %></td>
+        <td><%= paper.journal %></td>
+        <td><%= paper.publish_year %></td>
+        <td><%= paper.publish_volume %></td>
+        <td><%= paper.publish_pages %></td>
+        <td><%= paper.publish_month %></td>
+        <td><%= paper.credibility_rate %></td>
+        <td><%= paper.research_metrix %></td>
+        <td><%= paper.research_aim %></td>
+        <td><%= paper.research_method_field1 %></td>
+        <td><%= paper.research_method_field2 %></td>
+        <td><%= paper.research_method_field3 %></td>
+        <td><%= paper.research_method_field4 %></td>
+        <td><%= paper.participant1 %></td>
+        <td><%= paper.participant2 %></td>
+        <td><%= paper.participant3 %></td>
+        <td><%= paper.participant4 %></td>
+        <td><%= link_to 'Show', paper %></td>
+        <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
+        <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paper', new_paper_path %>

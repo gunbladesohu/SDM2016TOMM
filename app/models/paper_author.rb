@@ -1,0 +1,2 @@
+class PaperAuthor < ApplicationRecord
+end
