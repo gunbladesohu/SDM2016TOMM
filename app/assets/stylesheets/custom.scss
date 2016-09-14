@@ -1,0 +1,133 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+/* navbar light-green */
+.navbar-light-green {
+background-color: #30bd37;
+border: none;
+}
+/* change logo text color and hover color */
+.navbar-light-green .navbar-brand {
+color: #fff
+}
+.navbar-light-green .navbar-brand:hover, .navbar-light-green .navbar-brand:focus {
+color:#ccc
+}
+/* Change nav links color */
+.navbar-light-green .navbar-nav > li > a {
+color:#fff
+}
+.navbar-light-green .navbar-nav > li > a:hover {
+color:#fff
+}
+/* change visited color */
+.navbar-light-green .navbar-nav > li > a:focus {
+color:#fff
+}
+/* form */
+.navbar-light-green .form-control {
+border-radius:4;
+border:none
+}
+.navbar-light-green .form-control {
+border:1px solid #1da224
+}
+.navbar-light-green .btn {
+border:1px solid #1da224
+}
+/* open drop down background color */
+.navbar-light-green .navbar-nav .open .dropdown-menu {
+background:#fff
+}
+/* mobile toggle nav icon */
+.navbar-light-green .navbar-toggle {
+border-color:#e7e7e7
+}
+.navbar-light-green .navbar-toggle .icon-bar {
+background-color:#e7e7e7
+}
+.navbar-light-green .navbar-toggle:focus, .navbar-light-green .navbar-toggle:hover {
+background-color:#fff
+}
+.navbar-light-green .navbar-toggle:focus .icon-bar, .navbar-light-green .navbar-toggle:hover .icon-bar {
+background-color:#3b5998
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
