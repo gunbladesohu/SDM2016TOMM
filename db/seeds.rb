@@ -3,7 +3,7 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])12312
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(user_role: "administrator", user_status: "xxx",user_name: "tom",user_password_hash: "xxxxxxxx",
 user_fullname: "tom wang",user_email: "xxx@qq.com",user_gender:"male",user_age: "20")
