@@ -1,20 +1,22 @@
 default: &default
-      adapter: postgresql
-      encoding: unicode
-      pool: 5
-      username: <%= ENV['USERNAME'] %>
-      password: <%= ENV['PASSWORD'] %>
-      host:     <%= ENV['IP'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  host:     <%= ENV['IP'] %>
 
 development:
   <<: *default
-  database: app_development
+  database: SDM1_development
 
-test:
+test: &test
   <<: *default
-  database: app_test
+  database: SDM1_test
 
 production:
   <<: *default
-  database: app_production
+  database: SDM_production
   
+cucumber:
+  <<: *test
