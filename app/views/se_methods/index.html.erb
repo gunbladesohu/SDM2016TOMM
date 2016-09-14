@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Se Methods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @se_methods.each do |se_method| %>
+      <tr>
+        <td><%= se_method.id %></td>
+        <td><%= se_method.methodology_id %></td>
+        <td><%= se_method.method_name %></td>
+        <td><%= link_to 'Show', se_method %></td>
+        <td><%= link_to 'Edit', edit_se_method_path(se_method) %></td>
+        <td><%= link_to 'Destroy', se_method, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Se Method', new_se_method_path %>

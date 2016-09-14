@@ -1,0 +1,2 @@
+class SeMethod < ApplicationRecord
+end

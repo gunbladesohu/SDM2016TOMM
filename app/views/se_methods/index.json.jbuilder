@@ -1,0 +1,1 @@
+json.array! @se_methods, partial: 'se_methods/se_method', as: :se_method

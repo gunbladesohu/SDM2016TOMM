@@ -1,0 +1,1 @@
+json.array! @evidence_methods, partial: 'evidence_methods/evidence_method', as: :evidence_method

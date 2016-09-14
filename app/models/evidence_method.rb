@@ -1,0 +1,2 @@
+class EvidenceMethod < ApplicationRecord
+end
