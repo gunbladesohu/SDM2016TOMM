@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908074624) do
+ActiveRecord::Schema.define(version: 20160908061421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20160908074624) do
 
   create_table "papers", force: :cascade do |t|
     t.integer  "user_id"
-    t.text     "submitted_date"
+    t.datetime "submitted_date"
     t.string   "paper_status"
     t.integer  "moderator_id"
     t.datetime "moderated_time"
@@ -92,8 +92,6 @@ ActiveRecord::Schema.define(version: 20160908074624) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
     t.string   "user_role"
     t.string   "user_status"
     t.string   "user_name"
@@ -102,6 +100,8 @@ ActiveRecord::Schema.define(version: 20160908074624) do
     t.text     "user_email"
     t.string   "user_gender"
     t.integer  "user_age"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_foreign_key "evidence_methods", "evidences"
