@@ -15,27 +15,6 @@ ActiveRecord::Schema.define(version: 20160913055359) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", id: false, force: :cascade do |t|
-    t.string  "author",                limit: 25
-    t.string  "title",                 limit: 50
-    t.integer "year"
-    t.string  "publisher",             limit: 10
-    t.string  "journalname",           limit: 50
-    t.integer "page"
-    t.string  "month",                 limit: 20
-    t.string  "doi",                   limit: 20
-    t.integer "volume"
-    t.string  "submitter",             limit: 50
-    t.string  "status",                limit: 50
-    t.string  "research_methods",      limit: 50
-    t.string  "research_metric",       limit: 50
-    t.string  "research_participants", limit: 50
-    t.string  "method",                limit: 50
-    t.string  "technique",             limit: 50
-    t.string  "tool",                  limit: 50
-    t.string  "evidence",              limit: 50
-  end
-
   create_table "serlerusers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,14 +29,6 @@ ActiveRecord::Schema.define(version: 20160913055359) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "userfinals", force: :cascade do |t|
-    t.string   "email"
-    t.string   "password_hash"
-    t.string   "password_salt"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -65,20 +36,12 @@ ActiveRecord::Schema.define(version: 20160913055359) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
   create_table "userserlers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "usertests", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
   end
 
 end
