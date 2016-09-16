@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
  
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy, :reset_password]
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'resetpasswordemail', to: 'sessions#resetpasswordemail', as: 'resetpasswordemail'
   resources :users
   get 'page/index'
   root 'page#index'
+  
 
  root   'static_pages#home'
   get    '/help',    to: 'static_pages#help'

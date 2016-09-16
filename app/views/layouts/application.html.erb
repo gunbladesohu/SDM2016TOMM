@@ -53,8 +53,6 @@
 <% if current_user %>
 Logged in as <%= current_user.email %>.
 <%= link_to "Log Out", logout_path %>
-<% else %>
-<%= link_to "Sign Up", signup_path %> 
 <% end %>
 </div>
 <% flash.each do |key, value| %>
