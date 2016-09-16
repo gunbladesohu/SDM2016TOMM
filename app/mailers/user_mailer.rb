@@ -7,5 +7,4 @@ class UserMailer < ApplicationMailer
      mail(to: @user.email, subject: 'Your new password for Serler')
  end
 
-
 end
