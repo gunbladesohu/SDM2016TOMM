@@ -1,11 +1,15 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do   
  
+
+
+  resources :password_resets,     only: [:new, :create, :edit, :update]
+  
+  
   resources :sessions, only: [:new, :create, :destroy, :user_mailer]
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  resources :mailers
-  get 'UserMailer', to: 'mailers#UserMailer', as: 'UserMailer'
+
   resources :users
   get 'page/index'
   root 'page#index'
