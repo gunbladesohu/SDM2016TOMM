@@ -1,0 +1,82 @@
+<%= form_for(search_query) do |f| %>
+  <% if search_query.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(search_query.errors.count, "error") %> prohibited this search_query from being saved:</h2>
+
+      <ul>
+      <% search_query.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date_range %>
+    <%= f.datetime_select :date_range %>
+  </div>
+
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+
+  <div class="field">
+    <%= f.label :credibility_rate %>
+    <%= f.number_field :credibility_rate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :research_method_field1 %>
+    <%= f.check_box :research_method_field1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :research_method_field2 %>
+    <%= f.check_box :research_method_field2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :research_method_field3 %>
+    <%= f.check_box :research_method_field3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :research_method_field4 %>
+    <%= f.check_box :research_method_field4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :se_method %>
+    <%= f.text_field :se_method %>
+  </div>
+
+  <div class="field">
+    <%= f.label :research_metric %>
+    <%= f.number_field :research_metric %>
+  </div>
+
+  <div class="field">
+    <%= f.label :participant1 %>
+    <%= f.check_box :participant1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :participant2 %>
+    <%= f.check_box :participant2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :participant3 %>
+    <%= f.check_box :participant3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :participant4 %>
+    <%= f.check_box :participant4 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

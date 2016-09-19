@@ -1,0 +1,36 @@
+<h1>Search Result</h1>
+
+<%if @sousuo1.sousuo2_papers.empty?%>
+<div class="alert-danger" >
+<span style="padding-left:40%;margin-top:20px;font-size:30px">no result!!!</span>
+</div>
+<%else%>
+
+
+<br>
+
+ 
+    <table class="table table-striped">
+    <tr>
+     <th>Title</th>
+     <th>Authors</th>
+      <th>paper status</th>
+       <th>journal</th> 
+        <th>publish year<th>
+        <th> publish volume<th>
+         
+        </tr>
+        <% @sousuo1.sousuo2_papers.each do|c|%>
+        <tr>
+            <td><%=c.title%></td>
+             <td><%=c.authors %></td>
+              <td><%=c.paper_status %> </td> 
+              <td><%=c.journal %></td>
+              <td><%=c.publish_year %></td>
+               <td><%=c.publish_volume %> </td>
+            </tr>
+
+    <%end%>
+    <%end%>
+    <ul class="pager">
+    <li><%= link_to 'Back',new_sousuo1_path%></li></ul>

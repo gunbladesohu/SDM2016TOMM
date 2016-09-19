@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_range: 2016-09-15 10:23:20
+  author: MyString
+  credibility_rate: 1
+  research_method_field1: false
+  research_method_field2: false
+  research_method_field3: false
+  research_method_field4: false
+  se_method: MyString
+  research_metric: 1
+  participant1: false
+  participant2: false
+  participant3: false
+  participant4: false
+
+two:
+  date_range: 2016-09-15 10:23:20
+  author: MyString
+  credibility_rate: 1
+  research_method_field1: false
+  research_method_field2: false
+  research_method_field3: false
+  research_method_field4: false
+  se_method: MyString
+  research_metric: 1
+  participant1: false
+  participant2: false
+  participant3: false
+  participant4: false

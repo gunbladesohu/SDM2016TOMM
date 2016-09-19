@@ -1,0 +1,2 @@
+class Useless < ApplicationRecord
+end

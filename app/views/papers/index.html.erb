@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Papers</h1>
+<div class="panel panel-default">
+  <div class="panel-heading" style="font-size:30px">Papers</div>
 
 <table>
-
-
+<ul class="pager">
+  <li>
+<%=link_to "advanced search",new_sousuo1_path %></li></ul>
   <tbody>
     <% @papers.each do |paper| %>
       <tr>
@@ -42,6 +43,8 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Paper', new_paper_path %>
+</div></div>
+<ul class="pager">
+<li><%= link_to 'New Paper', new_paper_path %></li>
+</ul>

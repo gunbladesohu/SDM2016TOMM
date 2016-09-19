@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908074624) do
+ActiveRecord::Schema.define(version: 20160918093312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,35 @@ ActiveRecord::Schema.define(version: 20160908074624) do
     t.string   "method_name"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "search_queries", force: :cascade do |t|
+    t.datetime "date_range"
+    t.string   "author"
+    t.integer  "credibility_rate"
+    t.boolean  "research_method_field1"
+    t.boolean  "research_method_field2"
+    t.boolean  "research_method_field3"
+    t.boolean  "research_method_field4"
+    t.string   "se_method"
+    t.integer  "research_metric"
+    t.boolean  "participant1"
+    t.boolean  "participant2"
+    t.boolean  "participant3"
+    t.boolean  "participant4"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "sousuo1s", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "uselesses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

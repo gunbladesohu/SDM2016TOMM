@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date range:</strong>
+  <%= @search_query.date_range %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @search_query.author %>
+</p>
+
+<p>
+  <strong>Credibility rate:</strong>
+  <%= @search_query.credibility_rate %>
+</p>
+
+<p>
+  <strong>Research method field1:</strong>
+  <%= @search_query.research_method_field1 %>
+</p>
+
+<p>
+  <strong>Research method field2:</strong>
+  <%= @search_query.research_method_field2 %>
+</p>
+
+<p>
+  <strong>Research method field3:</strong>
+  <%= @search_query.research_method_field3 %>
+</p>
+
+<p>
+  <strong>Research method field4:</strong>
+  <%= @search_query.research_method_field4 %>
+</p>
+
+<p>
+  <strong>Se method:</strong>
+  <%= @search_query.se_method %>
+</p>
+
+<p>
+  <strong>Research metric:</strong>
+  <%= @search_query.research_metric %>
+</p>
+
+<p>
+  <strong>Participant1:</strong>
+  <%= @search_query.participant1 %>
+</p>
+
+<p>
+  <strong>Participant2:</strong>
+  <%= @search_query.participant2 %>
+</p>
+
+<p>
+  <strong>Participant3:</strong>
+  <%= @search_query.participant3 %>
+</p>
+
+<p>
+  <strong>Participant4:</strong>
+  <%= @search_query.participant4 %>
+</p>
+
+<%= link_to 'Edit', edit_search_query_path(@search_query) %> |
+<%= link_to 'Back', search_queries_path %>

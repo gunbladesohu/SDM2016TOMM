@@ -8,10 +8,35 @@
 User.create(user_role: "administrator", user_status: "xxx",user_name: "tom",user_password_hash: "xxxxxxxx",
 user_fullname: "tom wang",user_email: "xxx@qq.com",user_gender:"male",user_age: "20")
 Paper.create(user_id:'1',submitted_date:'08-09-2015',paper_status:'xxxx',moderator_id:'1',moderated_time:'01-01-2011',
-analyst_id:'1',analysed_time:'01-02-2013',authors:'xxx',title:'xxx',journal:'xxx',publish_year:'2013',publish_volume:'13',
+analyst_id:'1',analysed_time:'01-02-2013',authors:'Windy',title:'Waterfall',journal:'xxx',publish_year:'2013',publish_volume:'13',
 publish_pages:'13',publish_month:'Dec',credibility_rate:'xx',research_metrix:'xx',research_aim:'xxx',research_method_field1:'true',
 research_method_field2:'true',research_method_field3:'true',research_method_field4:'false',participant1:'true',
 participant2:'true',participant3:'false',participant4:'true')  
+Paper.create(user_id:'2',submitted_date:'10-09-2011',paper_status:'xxxx',moderator_id:'1',moderated_time:'01-01-2011',
+analyst_id:'1',analysed_time:'03-01-2013',authors:'Sanda',title:'Scrum',journal:'XX',publish_year:'2001',publish_volume:'13',
+publish_pages:'13',publish_month:'Dec',credibility_rate:'xx',research_metrix:'xx',research_aim:'xxx',research_method_field1:'true',
+research_method_field2:'true',research_method_field3:'true',research_method_field4:'false',participant1:'true',
+participant2:'true',participant3:'false',participant4:'true')  
+Paper.create(user_id:'2',submitted_date:'10-09-2011',paper_status:'xxxx',moderator_id:'1',moderated_time:'01-01-2011',
+analyst_id:'1',analysed_time:'01-02-2013',authors:'Sanda',title:'Waterfall2',journal:'XX',publish_year:'2001',publish_volume:'13',
+publish_pages:'13',publish_month:'Dec',credibility_rate:'xx',research_metrix:'xx',research_aim:'xxx',research_method_field1:'true',
+research_method_field2:'true',research_method_field3:'true',research_method_field4:'false',participant1:'true',
+participant2:'true',participant3:'false',participant4:'true') 
+Paper.create(user_id:'2',submitted_date:'10-09-2011',paper_status:'xxxx',moderator_id:'1',moderated_time:'01-01-2011',
+analyst_id:'1',analysed_time:'01-02-2013',authors:'Tom',title:'Waterfall3',journal:'XX',publish_year:'2001',publish_volume:'13',
+publish_pages:'13',publish_month:'Dec',credibility_rate:'xx',research_metrix:'xx',research_aim:'xxx',research_method_field1:'true',
+research_method_field2:'true',research_method_field3:'true',research_method_field4:'false',participant1:'true',
+participant2:'true',participant3:'false',participant4:'true') 
+Paper.create(user_id:'2',submitted_date:'10-09-2011',paper_status:'xxxx',moderator_id:'1',moderated_time:'01-01-2011',
+analyst_id:'1',analysed_time:'01-02-2013',authors:'Windy',title:'Scrum3',journal:'XX',publish_year:'2001',publish_volume:'13',
+publish_pages:'13',publish_month:'Dec',credibility_rate:'xx',research_metrix:'xx',research_aim:'xxx',research_method_field1:'true',
+research_method_field2:'true',research_method_field3:'true',research_method_field4:'false',participant1:'true',
+participant2:'true',participant3:'false',participant4:'true') 
+Paper.create(user_id:'2',submitted_date:'10-09-2011',paper_status:'xxxx',moderator_id:'1',moderated_time:'01-01-2011',
+analyst_id:'1',analysed_time:'01-02-2013',authors:'Sanda',title:'Scrum2',journal:'XX',publish_year:'2001',publish_volume:'13',
+publish_pages:'13',publish_month:'Dec',credibility_rate:'xx',research_metrix:'xx',research_aim:'xxx',research_method_field1:'true',
+research_method_field2:'true',research_method_field3:'true',research_method_field4:'false',participant1:'true',
+participant2:'true',participant3:'false',participant4:'true') 
 Methodology.create(methodology_name:"Scrum",description:"xxx")
 Methodology.create(methodology_name:"Waterfall",description:"xxx")
 Methodology.create(methodology_name:"Spiral",description:"xxx")

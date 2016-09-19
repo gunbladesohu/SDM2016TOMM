@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :search_queries
   resources :paper_authors
   resources :authors
   resources :evidence_methods
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   resources :evidences
   resources :papers
   resources :users
+  resources:sousuo1s
     root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,13 @@
+<h1>Search Paper<h1>
+    <%=form_for @sousuo1 do |s| %>
+    <div>
+        <%= s.text_field:title,class:"col-xs-3 col-sm-3 form-control"%>
+        <div style="margin-left:47%"><%=s.submit "search", class:"btn btn-success"%></div>
+        <div style="margin-left:0%"><%=s.submit "Advanced Search", class:"btn btn-info"%></div>
+        
+        </div>
+        <%end%>
+        <ul class="pager">
+        <li><%= link_to'Back',papers_path%></li>
+        </ul>
+      

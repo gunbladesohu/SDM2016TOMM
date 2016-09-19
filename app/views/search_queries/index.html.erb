@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Search Queries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date range</th>
+      <th>Author</th>
+      <th>Credibility rate</th>
+      <th>Research method field1</th>
+      <th>Research method field2</th>
+      <th>Research method field3</th>
+      <th>Research method field4</th>
+      <th>Se method</th>
+      <th>Research metric</th>
+      <th>Participant1</th>
+      <th>Participant2</th>
+      <th>Participant3</th>
+      <th>Participant4</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @search_queries.each do |search_query| %>
+      <tr>
+        <td><%= search_query.date_range %></td>
+        <td><%= search_query.author %></td>
+        <td><%= search_query.credibility_rate %></td>
+        <td><%= search_query.research_method_field1 %></td>
+        <td><%= search_query.research_method_field2 %></td>
+        <td><%= search_query.research_method_field3 %></td>
+        <td><%= search_query.research_method_field4 %></td>
+        <td><%= search_query.se_method %></td>
+        <td><%= search_query.research_metric %></td>
+        <td><%= search_query.participant1 %></td>
+        <td><%= search_query.participant2 %></td>
+        <td><%= search_query.participant3 %></td>
+        <td><%= search_query.participant4 %></td>
+        <td><%= link_to 'Show', search_query %></td>
+        <td><%= link_to 'Edit', edit_search_query_path(search_query) %></td>
+        <td><%= link_to 'Destroy', search_query, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Search Query', new_search_query_path %>

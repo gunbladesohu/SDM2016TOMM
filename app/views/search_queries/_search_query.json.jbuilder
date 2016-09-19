@@ -1,0 +1,2 @@
+json.extract! search_query, :id, :date_range, :author, :credibility_rate, :research_method_field1, :research_method_field2, :research_method_field3, :research_method_field4, :se_method, :research_metric, :participant1, :participant2, :participant3, :participant4, :created_at, :updated_at
+json.url search_query_url(search_query, format: :json)
