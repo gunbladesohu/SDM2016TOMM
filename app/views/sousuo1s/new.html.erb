@@ -1,0 +1,17 @@
+<h1>Search Paper</h1>
+    <%=form_for @sousuo1 do |s| %>
+    <table>
+        <tr><td>Title:</td><td><%= s.text_field :title,class:"form-control"%></td></tr>
+        <tr><td>Research method:</td><td><%= s.select:research_method,
+        options_for_select(@research_method),:include_blank =>true, class:"col-xs-3 col-sm-3 form-control textbox"%></td></tr>
+        <tr><td>Publish year</td><td>From<%=s.text_field :min_year, class:"form-control int",type:"number" %>
+        To<%=s.text_field :max_year,class:"form-control int",type:"number" %></td> </tr>
+        <tr><td><%=s.submit "search", class:"btn btn-success"%></td></tr>
+        </table>
+        
+        
+        <%end%>
+        <ul class="pager">
+        <li><%= link_to'Back',books_path%></li>
+        </ul>
+      

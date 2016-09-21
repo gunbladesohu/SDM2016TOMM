@@ -1,0 +1,210 @@
+<p id="notice"><%= notice %></p>
+<table>
+  <tr><td  style="width:40%">
+<h1>Search Books</h1>
+<%= form_tag books_path, :method => 'get' do %>
+  <%= text_field_tag :search,params[:search], class:"form-control" %>
+  <%= submit_tag"Search", class:"btn btn-success searchbox"  %>
+<% end %>
+<ul class="pager">
+  <li>
+<%=link_to "Advanced search",new_sousuo1_path %></li></ul>
+</td>
+<td><table>
+  <tr><td><label class="checkbox-inline">
+      <input type="checkbox" class="title" checked="checked">Title
+    </label></td><td>
+  <label class="checkbox-inline">
+      <input type="checkbox" class="Username" checked="checked">Username
+    </label></td><td>
+    <label class="checkbox-inline">
+      <input type="checkbox" class="Submitted_date" checked="checked">Title
+    </label></td><td>
+    <label class="checkbox-inline">
+      <input type="checkbox" class="Submitted_date" checked="checked">Submitted date
+    </label></td></tr>
+   <tr><td> <label class="checkbox-inline">
+      <input type="checkbox" class="Paper_status" checked="checked">Paper status
+    </label></td><td>
+    <label class="checkbox-inline">
+      <input type="checkbox" class="Moderated_id" checked="checked">Moderated id
+    </label></td><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Moderated_date" checked="checked">Moderated date
+    </label></td><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Analysed_id" checked="checked">Analysed id
+    </label></td></tr>
+       <tr><td> <label class="checkbox-inline">
+      <input type="checkbox" class="Analysed_date" checked="checked">Analysed date
+    </label></td><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Authors" checked="checked">Authors
+    </label></td><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Journal" checked="checked">Journal
+    </label></td><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Publish_year" checked="checked">Publish year
+    </label></td></tr>
+        <tr><td><label class="checkbox-inline">
+      <input type="checkbox" class="Publish_volume" checked="checked">Publish volume
+    </label>
+    </td><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Publish_pages" checked="checked">Publish pages
+    </label>
+    </td><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Publish_month" checked="checked">Publish month
+    </label>
+    </td><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Credibility_rate" checked="checked">Credibility rate
+    </label><td></tr>
+    <tr><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Research_metrix" checked="checked">Research metrix
+    </label></td><td>
+    <label class="checkbox-inline">
+      <input type="checkbox" class="Research_metrix" checked="checked">Research metrix
+    </label></td><td>
+    <label class="checkbox-inline">
+      <input type="checkbox" class="Research_aim" checked="checked">Research aim
+    </label></td><td>
+    <label class="checkbox-inline">
+      <input type="checkbox" class="Research_method" checked="checked">Research method
+    </label></td>
+    </tr><tr><td>
+    <label class="checkbox-inline">
+      <input type="checkbox" class="Participant" checked="checked">Participant
+    </label></td>
+    </tr>
+    </table>
+</td>
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <th class="title1">Title</th>
+      <th class="Username1">Username</th>
+      <th class="Submitted_date1">Submitted date</th>
+      <th class="Paper_status1">Paper status</th>
+      <th class="Moderated_id1">Moderated id</th>
+      <th class="Moderated_date1">Moderated date</th>
+      <th class="Analysed_id1">Analysed id</th>
+      <th class="Analysed_date1">Analysed date</th>
+      <th class="Authors1">Authors</th>
+      
+      <th class="Journal1">Journal</th>
+      <th class="Publish_year1">Publish year</th>
+      <th class="Publish_volume1">Publish volume</th>
+      <th class="Publish_pages1">Publish pages</th>
+      <th class="Publish_month1">Publish month</th>
+      <th class="Credibility_rate1">Credibility rate</th>
+      <th class="Research_metrix1">Research metrix</th>
+      <th class="Research_aim1">Research aim</th>
+      <th class="Research_method1">Research method</th>
+      <th class="Participant1">Participant</th>
+        <th>Show</th>
+      <th colspan="3"></th>
+    
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td class="title1"><%= book.title %></td>
+        <td class="Username1"><%= book.username %></td>
+        <td class="Submitted_date1"><%= book.submitted_date %></td>
+        <td class="Paper_status1"><%= book.paper_status %></td>
+        <td class="Moderated_id1"><%= book.moderated_id %></td>
+        <td class="Moderated_date1"><%= book.moderated_date %></td>
+        <td class="Analysed_id1"><%= book.analysed_id %></td>
+        <td class="Analysed_date1"><%= book.analysed_date %></td>
+        <td class="Authors1"><%= book.authors %></td>
+        
+        <td class="Journal1"><%= book.journal %></td>
+        <td class="Publish_year1"><%= book.publish_year %></td>
+        <td class="Publish_volume1"><%= book.publish_volume %></td>
+        <td class="Publish_pages1"><%= book.publish_pages %></td>
+        <td class="Publish_month1"><%= book.publish_month %></td>
+        <td class="Credibility_rate1"><%= book.credibility_rate %></td>
+        <td class="Research_metrix1"><%= book.research_metrix %></td>
+        <td class="Research_aim1"><%= book.research_aim %></td>
+        <td class="Research_method1"><%= book.research_method %></td>
+        <td class="Participant1"><%= book.participant %></td>
+        <td><%= link_to 'Show', book %>
+        <%= link_to 'Edit', edit_book_path(book) %>
+        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>
+<script>
+  $(document).ready(function(){
+    $(".title").click(function(){
+        $(".title1").toggle();
+    });
+      $(".Username").click(function(){
+        $(".Username1").toggle();
+    });
+    $(".Submitted_date").click(function(){
+        $(".Submitted_date1").toggle();
+    });
+    $(".Paper_status").click(function(){
+        $(".Paper_status1").toggle();
+    });
+    $(".Moderated_id").click(function(){
+        $(".Moderated_id1").toggle();
+    });
+    $(".Moderated_date").click(function(){
+        $(".Moderated_date1").toggle();
+    });
+    $(".Analysed_id").click(function(){
+        $(".Analysed_id1").toggle();
+    });
+    $(".Analysed_date").click(function(){
+        $(".Analysed_date1").toggle();
+    });
+    $(".Authors").click(function(){
+        $(".Authors1").toggle();
+    });
+    $(".Journal").click(function(){
+        $(".Journal1").toggle();
+    });
+    $(".Publish_year").click(function(){
+        $(".Publish_year1").toggle();
+    });
+    $(".Publish_volume").click(function(){
+        $(".Publish_volume1").toggle();
+    });
+     $(".Publish_pages").click(function(){
+        $(".Publish_pages1").toggle();
+    });
+     $(".Publish_month").click(function(){
+        $(".Publish_month1").toggle();
+    });
+     $(".Credibility_rate").click(function(){
+        $(".Credibility_rate1").toggle();
+    });
+     $(".Research_metrix").click(function(){
+        $(".Research_metrix1").toggle();
+    });
+     $(".Research_aim").click(function(){
+        $(".Research_aim1").toggle();
+    });
+     $(".Research_method").click(function(){
+        $(".Research_method1").toggle();
+    });
+   
+     $(".Participant").click(function(){
+        $(".Participant1").toggle();
+    });
+    
+});
+</script>

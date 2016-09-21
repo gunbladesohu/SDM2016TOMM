@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908061421) do
+ActiveRecord::Schema.define(version: 20160920060142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,30 @@ ActiveRecord::Schema.define(version: 20160908061421) do
     t.text     "title"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string   "username"
+    t.datetime "submitted_date"
+    t.string   "paper_status"
+    t.integer  "moderated_id"
+    t.datetime "moderated_date"
+    t.integer  "analysed_id"
+    t.datetime "analysed_date"
+    t.string   "authors"
+    t.text     "title"
+    t.text     "journal"
+    t.integer  "publish_year"
+    t.integer  "publish_volume"
+    t.integer  "publish_pages"
+    t.string   "publish_month"
+    t.string   "credibility_rate"
+    t.string   "research_metrix"
+    t.text     "research_aim"
+    t.string   "research_method"
+    t.string   "participant"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "evidence_methods", force: :cascade do |t|
@@ -89,6 +113,15 @@ ActiveRecord::Schema.define(version: 20160908061421) do
     t.string   "method_name"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "sousuo1s", force: :cascade do |t|
+    t.string   "title"
+    t.string   "research_method"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "min_year"
+    t.integer  "max_year"
   end
 
   create_table "users", force: :cascade do |t|
