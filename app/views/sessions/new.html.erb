@@ -1,14 +1,17 @@
-<h1>Log In</h1>
+<h3>Please Log In before Submission</h3>
 <%= form_tag sessions_path do %>
-<div class="field">
-<%= label_tag :email %><br>
-<%= text_field_tag :email %>
-</div>
+  <div class="field">
+    <%= label_tag :email %><br>
+    <%= text_field_tag :email %>
+  </div>
   <div class="field">
     <%= label_tag :password %><br>
-<%= password_field_tag :password %>
-</div>
+    <%= password_field_tag :password %>
+  </div>
   <div class="actions">
     <%= submit_tag "Log In" %>
+    <%= link_to "Register", signup_path%><br>
+    <%= link_to "Forgotten password?", new_password_reset_path %>
 </div>
+
 <% end %>

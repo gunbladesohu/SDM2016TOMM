@@ -19,7 +19,7 @@ color:#ccc
 color:#fff
 }
 .navbar-light-green .navbar-nav > li > a:hover {
-color:#fff
+color:#000
 }
 /* change visited color */
 .navbar-light-green .navbar-nav > li > a:focus {
@@ -56,33 +56,51 @@ background-color:#3b5998
 
 /* footer */
 
+wrapper {
+  position:relative;
+  height:auto;
+  min-height:100%;
+  background-color:#e7e7e7
+}
+
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
+  position:fixed; bottom:0;
+  height:60px;
+  width:90%;
   border-top: 1px solid #eaeaea;
+  background-color: White;
   color: #777;
 }
 
 footer a {
+  padding-bottom:60px;
+  left:0;
   color: #555;
 }
 
 footer a:hover {
-  color: #222;
+  padding-body:30px;
+  color: #000;
+  background-color: #fff;
 }
 
 footer small {
+  padding-bottom:30px;
   float: left;
+  margin-left:15px;
 }
 
 footer ul {
+  position: absolute;
   float: right;
+  right: 10px;
   list-style: none;
 }
 
 footer ul li {
-  float: left;
-  margin-left: 15px;
+  float: right;
+  right: 10px;
+  margin-right: 15px;
 }
 
 body {
@@ -125,6 +143,14 @@ h2 {
   text-align: center;
   font-weight: normal;
   color: #777;
+}
+
+h3 {
+  font-size: 1.6em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-weight: normal;
 }
 
 p {

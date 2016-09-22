@@ -1,3 +1,5 @@
+
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -32,21 +34,7 @@ ActiveRecord::Schema.define(version: 20160921052041) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "papers", force: :cascade do |t|
-    t.string   "username"
-    t.string   "articlecategory"
-    t.string   "author"
-    t.string   "title"
-    t.string   "journal"
-    t.string   "description"
-    t.string   "publishername"
-    t.integer  "pages"
-    t.integer  "volume"
-    t.date     "publish_date"
-    t.date     "submitted_date"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
+
 
   create_table "serlerusers", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -69,6 +57,8 @@ ActiveRecord::Schema.define(version: 20160921052041) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "reset_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
   create_table "userserlers", force: :cascade do |t|
