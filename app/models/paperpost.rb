@@ -1,0 +1,2 @@
+class Paperpost < ApplicationRecord
+end

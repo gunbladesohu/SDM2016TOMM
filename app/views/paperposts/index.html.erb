@@ -1,0 +1,59 @@
+<%- model_class = Paperpost -%>
+<div class="page-header">
+  <!--<h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>-->
+  <h1  style="font-size: 2em" "margin-top: 0.67em">View Submitted Articles</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!--<th><%= model_class.human_attribute_name(:id) %></th> -->
+      <!--<th><%= model_class.human_attribute_name(:username) %></th> -->
+      <th><%= model_class.human_attribute_name(:articlecategory) %></th>
+      <th><%= model_class.human_attribute_name(:author) %></th>
+      <!--<th><%= model_class.human_attribute_name(:title) %></th>-->
+      <th><%= model_class.human_attribute_name(:journalname) %></th>
+      <!--<th><%= model_class.human_attribute_name(:description) %></th>-->
+      <th><%= model_class.human_attribute_name(:publishername) %></th>
+      <!--<th><%= model_class.human_attribute_name(:pages) %></th>-->
+      <th><%= model_class.human_attribute_name(:status_type) %></th>
+     <!-- <th><%= model_class.human_attribute_name(:volume) %></th>-->
+      <!--<th><%= model_class.human_attribute_name(:publish_date) %></th>-->
+      <th><%= model_class.human_attribute_name(:submitted_date) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @paperposts.each do |paperpost| %>
+      <tr>
+        <!--<td><%= link_to paperpost.id, paperpost_path(paperpost) %></td>-->
+        <!--<td><%= paperpost.username %></td>-->
+        <td><%= paperpost.articlecategory %></td>
+        <td><%= paperpost.author %></td>
+        <!--<td><%= paperpost.title %></td>-->
+        <td><%= paperpost.journalname %></td>
+        <!--<td><%= paperpost.description %></td>-->
+        <td><%= paperpost.publishername %></td>
+        <!--<td><%= paperpost.pages %></td>-->
+        <td><%= paperpost.status_type %></td>
+        <!--<td><%= paperpost.volume %></td>-->
+       <!-- <td><%= paperpost.publish_date %></td>-->
+        <td><%= paperpost.submitted_date %></td>
+        <td><%=l paperpost.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_paperpost_path(paperpost), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      paperpost_path(paperpost),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_paperpost_path,
+            :class => 'btn btn-primary' %>

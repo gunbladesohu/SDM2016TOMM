@@ -1,0 +1,2 @@
+module PaperpostsHelper
+end

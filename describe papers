@@ -1,0 +1,4 @@
+ id | username | articlecategory | author | title | journal | description | publishername | pages | volume | publish_date | submitted_date | created_at | updated_at 
+----+----------+-----------------+--------+-------+---------+-------------+---------------+-------+--------+--------------+----------------+------------+------------
+(0 rows)
+
