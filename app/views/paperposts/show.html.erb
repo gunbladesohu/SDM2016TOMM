@@ -1,0 +1,41 @@
+<%- model_class = Paperpost -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:username) %>:</strong></dt>
+  <dd><%= @paperpost.username %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:articlecategory) %>:</strong></dt>
+  <dd><%= @paperpost.articlecategory %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:author) %>:</strong></dt>
+  <dd><%= @paperpost.author %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @paperpost.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:journalname) %>:</strong></dt>
+  <dd><%= @paperpost.journalname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @paperpost.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:publishername) %>:</strong></dt>
+  <dd><%= @paperpost.publishername %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pages) %>:</strong></dt>
+  <dd><%= @paperpost.pages %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:volume) %>:</strong></dt>
+  <dd><%= @paperpost.volume %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:publish_date) %>:</strong></dt>
+  <dd><%= @paperpost.publish_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:submitted_date) %>:</strong></dt>
+  <dd><%= @paperpost.submitted_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status_type) %>:</strong></dt>
+  <dd><%= @paperpost.status_type %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              paperposts_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_paperpost_path(@paperpost), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              paperpost_path(@paperpost),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

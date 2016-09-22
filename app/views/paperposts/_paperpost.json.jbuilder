@@ -1,0 +1,2 @@
+json.extract! paperpost, :id, :username, :articlecategory, :author, :title, :journalname, :description, :publishername, :pages, :volume, :publish_date, :submitted_date, :status_type, :created_at, :updated_at
+json.url paperpost_url(paperpost, format: :json)

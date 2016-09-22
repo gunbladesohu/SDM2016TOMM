@@ -10,30 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913055359) do
+ActiveRecord::Schema.define(version: 20160921052041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", id: false, force: :cascade do |t|
-    t.string  "author",                limit: 25
-    t.string  "title",                 limit: 50
-    t.integer "year"
-    t.string  "publisher",             limit: 10
-    t.string  "journalname",           limit: 50
-    t.integer "page"
-    t.string  "month",                 limit: 20
-    t.string  "doi",                   limit: 20
-    t.integer "volume"
-    t.string  "submitter",             limit: 50
-    t.string  "status",                limit: 50
-    t.string  "research_methods",      limit: 50
-    t.string  "research_metric",       limit: 50
-    t.string  "research_participants", limit: 50
-    t.string  "method",                limit: 50
-    t.string  "technique",             limit: 50
-    t.string  "tool",                  limit: 50
-    t.string  "evidence",              limit: 50
+  create_table "paperposts", force: :cascade do |t|
+    t.string   "username"
+    t.string   "articlecategory"
+    t.string   "author"
+    t.string   "title"
+    t.string   "journalname"
+    t.string   "description"
+    t.string   "publishername"
+    t.integer  "pages"
+    t.string   "volume"
+    t.datetime "publish_date"
+    t.datetime "submitted_date"
+    t.string   "status_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "papers", force: :cascade do |t|
+    t.string   "username"
+    t.string   "articlecategory"
+    t.string   "author"
+    t.string   "title"
+    t.string   "journal"
+    t.string   "description"
+    t.string   "publishername"
+    t.integer  "pages"
+    t.integer  "volume"
+    t.date     "publish_date"
+    t.date     "submitted_date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "serlerusers", force: :cascade do |t|
@@ -50,14 +62,6 @@ ActiveRecord::Schema.define(version: 20160913055359) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "userfinals", force: :cascade do |t|
-    t.string   "email"
-    t.string   "password_hash"
-    t.string   "password_salt"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -72,13 +76,21 @@ ActiveRecord::Schema.define(version: 20160913055359) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "usertests", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+  create_table "visitors", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_visitors_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_visitors_on_reset_password_token", unique: true, using: :btree
   end
 
 end
