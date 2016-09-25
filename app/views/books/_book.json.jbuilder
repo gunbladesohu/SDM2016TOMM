@@ -1,0 +1,2 @@
+json.extract! book, :id, :username, :submitted_date, :paper_status, :moderated_id, :moderated_date, :analysed_id, :analysed_date, :authors, :title, :journal, :publish_year, :publish_volume, :publish_pages, :publish_month, :credibility_rate, :research_metrix, :research_aim, :research_method, :participant, :created_at, :updated_at
+json.url book_url(book, format: :json)

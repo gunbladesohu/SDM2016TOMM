@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @book.username %>
+</p>
+
+<p>
+  <strong>Submitted date:</strong>
+  <%= @book.submitted_date %>
+</p>
+
+<p>
+  <strong>Paper status:</strong>
+  <%= @book.paper_status %>
+</p>
+
+<p>
+  <strong>Moderated:</strong>
+  <%= @book.moderated_id %>
+</p>
+
+<p>
+  <strong>Moderated date:</strong>
+  <%= @book.moderated_date %>
+</p>
+
+<p>
+  <strong>Analysed:</strong>
+  <%= @book.analysed_id %>
+</p>
+
+<p>
+  <strong>Analysed date:</strong>
+  <%= @book.analysed_date %>
+</p>
+
+<p>
+  <strong>Authors:</strong>
+  <%= @book.authors %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Journal:</strong>
+  <%= @book.journal %>
+</p>
+
+<p>
+  <strong>Publish year:</strong>
+  <%= @book.publish_year %>
+</p>
+
+<p>
+  <strong>Publish volume:</strong>
+  <%= @book.publish_volume %>
+</p>
+
+<p>
+  <strong>Publish pages:</strong>
+  <%= @book.publish_pages %>
+</p>
+
+<p>
+  <strong>Publish month:</strong>
+  <%= @book.publish_month %>
+</p>
+
+<p>
+  <strong>Credibility rate:</strong>
+  <%= @book.credibility_rate %>
+</p>
+
+<p>
+  <strong>Research metrix:</strong>
+  <%= @book.research_metrix %>
+</p>
+
+<p>
+  <strong>Research aim:</strong>
+  <%= @book.research_aim %>
+</p>
+
+<p>
+  <strong>Research method:</strong>
+  <%= @book.research_method %>
+</p>
+
+<p>
+  <strong>Participant:</strong>
+  <%= @book.participant %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
