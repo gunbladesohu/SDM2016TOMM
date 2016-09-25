@@ -10,11 +10,13 @@
 <br>
 
  
-    <table  class="table table-striped" style="width: 100%;">
+    <table  class="table table-striped" >
   <thead>
     <tr >
       <th>Title</th>
       <th>Username</th>
+      <th>Research method</th>
+      <th>Participant</th>
       <th>Submitted date</th>
       <th>Paper status</th>
       <th>Moderated</th>
@@ -31,8 +33,7 @@
       <th>Credibility rate</th>
       <th>Research metrix</th>
       <th>Research aim</th>
-      <th>Research method</th>
-      <th>Participant</th>
+      
         <th>Show</th>
       <th colspan="3"></th>
     
@@ -44,6 +45,8 @@
       <tr>
         <td><%= book.title %></td>
         <td><%= book.username %></td>
+        <td><%= book.research_method %></td>
+        <td><%= book.participant %></td>
         <td><%= book.submitted_date %></td>
         <td><%= book.paper_status %></td>
         <td><%= book.moderated_id %></td>
@@ -60,8 +63,7 @@
         <td><%= book.credibility_rate %></td>
         <td><%= book.research_metrix %></td>
         <td><%= book.research_aim %></td>
-        <td><%= book.research_method %></td>
-        <td><%= book.participant %></td>
+        
         <td><%= link_to 'Show', book %>
         <%= link_to 'Edit', edit_book_path(book) %>
         <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>

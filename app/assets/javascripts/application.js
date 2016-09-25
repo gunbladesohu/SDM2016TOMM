@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$('.selectpicker').selectpicker({
+  style: 'btn-info',
+  size: 4
+});
+

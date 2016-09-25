@@ -5,6 +5,12 @@
 <%= form_tag books_path, :method => 'get' do %>
   <%= text_field_tag :search,params[:search], class:"form-control" %>
   <%= submit_tag"Search", class:"btn btn-success searchbox"  %>
+  
+<div>
+<%= select_tag(:sorttitle, options_for_select(["title","publish_year"])) %>
+<%= select_tag(:sortway, options_for_select(["asc","desc"])) %>
+<%= submit_tag"Sort Books", class:"btn btn-info"  %>
+</div>
 <% end %>
 <ul class="pager">
   <li>
@@ -39,7 +45,7 @@
       <input type="checkbox" class="Analysed_date" checked="checked">Analysed date
     </label></td><td>
         <label class="checkbox-inline">
-      <input type="checkbox" class="Authors" checked="checked">Authors
+      <input type="checkbox" class="Author" checked="checked">Authors
     </label></td><td>
         <label class="checkbox-inline">
       <input type="checkbox" class="Journal" checked="checked">Journal
@@ -122,7 +128,7 @@
         <td class="Moderated_date1"><%= book.moderated_date %></td>
         <td class="Analysed_id1"><%= book.analysed_id %></td>
         <td class="Analysed_date1"><%= book.analysed_date %></td>
-        <td class="Authors1"><%= book.authors %></td>
+        <td class="Author1"><%= book.authors %></td>
         
         <td class="Journal1"><%= book.journal %></td>
         <td class="Publish_year1"><%= book.publish_year %></td>
@@ -171,8 +177,8 @@
     $(".Analysed_date").click(function(){
         $(".Analysed_date1").toggle();
     });
-    $(".Authors").click(function(){
-        $(".Authors1").toggle();
+    $(".Author").click(function(){
+        $(".Author1").toggle();
     });
     $(".Journal").click(function(){
         $(".Journal1").toggle();
@@ -201,7 +207,9 @@
      $(".Research_method").click(function(){
         $(".Research_method1").toggle();
     });
-   
+     $(".Research_aim").click(function(){
+        $(".Research_aim1").toggle();
+    });
      $(".Participant").click(function(){
         $(".Participant1").toggle();
     });

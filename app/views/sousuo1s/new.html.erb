@@ -1,17 +1,39 @@
+
+     <script>
+  $(document).ready(function(){
+      $(".morecriteria").hide();
+    $("#more").click(function(){
+        $(".morecriteria").fadeToggle();
+    });
+    
+});
+</script>
 <h1>Search Paper</h1>
     <%=form_for @sousuo1 do |s| %>
     <table>
-        <tr><td>Title:</td><td><%= s.text_field :title,class:"form-control"%></td></tr>
-        <tr><td>Research method:</td><td><%= s.select:research_method,
-        options_for_select(@research_method),:include_blank =>true, class:"col-xs-3 col-sm-3 form-control textbox"%></td></tr>
-        <tr><td>Publish year</td><td>From<%=s.text_field :min_year, class:"form-control int",type:"number" %>
-        To<%=s.text_field :max_year,class:"form-control int",type:"number" %></td> </tr>
-        <tr><td><%=s.submit "search", class:"btn btn-success"%></td></tr>
+        <tr><td>Title:</td><td><%= s.text_field :title,class:"form-control"%></td>
+        <td>Authors:</td><td><%= s.text_field :authors,class:"form-control"%></td></tr>
+         <tr><td>Journal:</td><td><%= s.text_field :journal,class:"form-control"%></td></tr>
         </table>
-        
-        
+       
+       <hr class="morecriteria">
+        <table class="morecriteria" style="margin-top:50px" id="more1">
+        <tr><td>Research method:</td><td><%= s.select:research_method,
+        options_for_select(@research_method),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludemethod %><span>Tick If Not Include</span>
+        </td></tr>
+        <tr><td>Participant:</td><td><%= s.select:participant,options_for_select(@participant),:include_blank =>true, class:"form-control "%></td>
+        <td><%= s.check_box :notincludeparticipant %><span>Tick If Not Include</span></td></tr>
+        <tr><td>Publish year</td><td>From<%=s.text_field :min_year, class:"form-control int",type:"number" %></td><td>
+        To<%=s.text_field :max_year,class:"form-control int",type:"number" %></td> </tr>
+        </table>
+         <%=s.submit "search", class:"btn btn-success"%>
         <%end%>
+         <button class="morebutton btn btn-primary" id="more" style="margin-top:30px"> Collapse All</button>
         <ul class="pager">
+            
         <li><%= link_to'Back',books_path%></li>
         </ul>
-      
+ <script>
+     
+ </script>

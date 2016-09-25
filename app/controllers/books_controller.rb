@@ -5,9 +5,20 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.where(["title like ?","%#{params[:search]}%"])
-  end
-
-  # GET /books/1
+    
+    # if(params[:sort])
+    #     @books=@books.order(title: :desc)
+      
+    # else @books=@books.order(title: :asc)
+    # end 
+    # if(params[:sortway]=="desc")
+    # @books=@books.order('params[:sorttitle]': :desc)
+    # else
+    # @books=@books.order('params[:sorttitle]': :asc)
+    # end
+   
+  end 
+  # GET /books/1s
   # GET /books/1.json
   def show
   end
