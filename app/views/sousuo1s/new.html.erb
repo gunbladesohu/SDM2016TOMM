@@ -2,14 +2,31 @@
 
      <script>
   $(document).ready(function(){
-      $(".morecriteria").hide();
-    $("#more").click(function(){
-        $(".morecriteria").fadeToggle();
+    
+     $(".participantbutton").hide();
+     $(".yearbutton").hide();
+       $(".participanttr").hide();
+     $(".yeartr").hide();
+    $(".methodadd").click(function(){
+        $(".participantbutton").show();
+        $(".participanttr").show();
+    });
+    $(".participantadd").click(function(){
+        $(".yearbutton").show();
+        $(".yeartr").show();
+    });
+    $(".participantremove").click(function(){
+       $(".participantbutton").hide();
+        $(".participanttr").hide();
+    });
+    $(".yearremove").click(function(){
+       $(".yearbutton").hide();
+        $(".yeartr").hide();
     });
     
 });
 </script>
-<h1>Search Paper</h1>
+<h1>Search Serler</h1>
     <%=form_for @sousuo1 do |s| %>
     <table>
         <tr><td>Title:</td><td><%= s.text_field :title,class:"form-control"%></td><td><input type="checkbox"><span>&nbsp;Equal</span></td></tr>
@@ -18,28 +35,42 @@
          <!--<tr><td><%= select_tag(:selectfield, options_for_select(["Title","Author","Journal"])) %> </td>-->
          <!--<td><%= select_tag(:selectoperator, options_for_select(["Equal","Contain"])) %> </td>-->
         </tr>
+           
             </table>
        
-       <hr class="morecriteria">
-        <table class="morecriteria" style="margin-top:50px" id="more1">
+       <hr>
+        <table style="margin-top:50px;float:left" id="more1">
         <tr><td>Research method:</td><td><%= s.select:research_method,
         options_for_select(@research_method),:include_blank =>true, class:"form-control"%>
         </td><td><%= s.check_box :notincludemethod %><span>&nbsp;Tick If Not Include</span>
         </td></tr>
-       <tr><td>Participant:</td><td><%= s.select:participant,
+       <tr class="participanttr"><td>Participant:</td><td><%= s.select:participant,
         options_for_select(@participant),:include_blank =>true, class:"form-control"%>
         </td><td><%= s.check_box :notincludeparticipant %><span>&nbsp;Tick If Not Include</span>
         </td></tr>
-        <tr><td>Publish year</td><td>From<%=s.text_field :min_year, class:"form-control int",type:"number" %></td><td>
+        <tr class="yeartr"><td>Publish year</td><td>From<%=s.text_field :min_year, class:"form-control int",type:"number" %></td><td>
         To<%=s.text_field :max_year,class:"form-control int",type:"number" %></td> </tr>
+        
+        <tr><td><%=s.submit "search", class:"btn btn-success"%></td></tr>
         </table>
-         <%=s.submit "search", class:"btn btn-success"%>
+        
+      
         <%end%>
-         <button class="morebutton btn btn-primary" id="more" style="margin-top:30px"> Collapse/Hide All</button>
-        <ul class="pager">
-            
+        <table style="margin-top:55px">
+            <tr><td><button class="btn btn-primary methodadd"> Add</button></button></td></tr>
+            <tr class="participantbutton"><td><button class="btn btn-primary participantadd"> Add</button></button>
+            <button class="btn btn-primary participantremove"> remove</button></td></tr>
+            <tr class="yearbutton"><td>
+                <button class="btn btn-primary yearadd"> Add</button></button>
+            <button class="btn btn-primary yearremove"> remove</button>
+            </td></tr>
+        </table>
+         
+        <ul class="pager" style="position:absolute;margin-left:30%;margin-top:10%">
+        
         <li><%= link_to'Back',books_path%></li>
         </ul>
+       
  <script>  
  
      

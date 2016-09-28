@@ -30,3 +30,6 @@
 .pretty th .desc {
   background-image: url(/app/images/down_arrow.png);
 }
+.submitbutton{
+  margin-top:20%;
+}
