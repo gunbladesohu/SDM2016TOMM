@@ -25,13 +25,7 @@ def sousuo1_books
      books=books.where(["authors Like ?","%#{authors}%"])  if authors.present?
      books=books.where(["journal Like ?","%#{journal}%"])  if journal.present?
      
-    if(notincludeparticipant)
-    
-        books=books.where(["participant Not Like ?",participant]) if participant.present?
-    else
-        books=books.where(["participant Like ?",participant]) if participant.present?
-        
-    end
+   
     if(notincludemethod)
     
         books=books.where(["research_method Not Like ?",research_method]) if research_method.present?
@@ -39,8 +33,14 @@ def sousuo1_books
         books=books.where(["research_method Like ?",research_method]) if research_method.present?
         
     end
-   
-  
+     if(!notincludeparticipant)
+     books=books.where(["participant Like ?",participant]) if participant.present?
+       
+    else
+         books=books.where(["participant Not Like ?",participant]) if participant.present?
+        
+    end
+ 
   
   
    return books
