@@ -1,41 +1,12 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-helper_method :sort_column, :sort_direction
   # GET /books
   # GET /books.json
+      helper_method :sort_column, :sort_direction
   def index
-    @books = Book.where(["title like ?","%#{params[:search]}%"])
-     @books= Book.order(sort_column + " " + sort_direction)
-    if(params[:sortway]=="Order By Desc"&&params[:sorttitle]=="Title")
-    @books=@books.order(title: :desc)
-    end
-    if(params[:sortway]=="Order By Asc"&&params[:sorttitle]=="Title")
-    @books=@books.order(title: :asc)
-      end
-    if(params[:sortway]=="Order By Desc"&&params[:sorttitle]=="Publish Year")
-    @books=@books.order(publish_year: :desc)
-    end
-    if(params[:sortway]=="Order By Asc"&&params[:sorttitle]=="Publish Year")
-    @books=@books.order(publish_year: :asc)
-    end
-    if(params[:sortway]=="Order By Desc"&&params[:sorttitle]=="Author")
-    @books=@books.order(authors: :desc)
-    end
-    if(params[:sortway]=="Order By Asc"&&params[:sorttitle]=="Author")
-    @books=@books.order(authors: :asc)
-    end
-    if(params[:sortway]=="Order By Desc"&&params[:sorttitle]=="Journal")
-    @books=@books.order(journal: :desc)
-    end
-    if(params[:sortway]=="Order By Asc"&&params[:sorttitle]=="Journal")
-    @books=@books.order(journal: :asc)
-    end
-    if(params[:sortway]=="Order By Desc"&&params[:sorttitle]=="Username")
-    @books=@books.order(username: :desc)
-    end
-    if(params[:sortway]=="Order By Asc"&&params[:sorttitle]=="Username")
-    @books=@books.order(username: :asc)
-    end
+   
+     @books= Book.where(["title like ?","%#{params[:search]}%"])
+     @books= @books.order(sort_column + " " + sort_direction)
    
  
    

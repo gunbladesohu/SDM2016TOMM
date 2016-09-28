@@ -13,7 +13,6 @@ class Sousuo1sController < ApplicationController
     end
     def show
          @sousuo1=Sousuo1.find(params[:id])
-         
              
     end
     
@@ -23,5 +22,6 @@ class Sousuo1sController < ApplicationController
          params.require(:sousuo1).permit(:title, :research_method, :min_year, :max_year,:authors,
          :journal,:participant,:notincludemethod,:notincludeparticipant)
     end 
+  
 
 end
