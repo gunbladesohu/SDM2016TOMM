@@ -17,3 +17,16 @@
 
     margin-top:20px;
 }
+.pretty th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pretty th .asc {
+  background-image: url(/app/images/up_arrow.png);
+}
+
+.pretty th .desc {
+  background-image: url(/app/images/down_arrow.png);
+}

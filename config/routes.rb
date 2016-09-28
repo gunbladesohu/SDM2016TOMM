@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :uselesstables
  root 'books#index'
   resources :books
   resources :paper_authors

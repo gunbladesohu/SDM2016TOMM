@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Uselesstables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uselesstables.each do |uselesstable| %>
+      <tr>
+        <td><%= uselesstable.name %></td>
+        <td><%= link_to 'Show', uselesstable %></td>
+        <td><%= link_to 'Edit', edit_uselesstable_path(uselesstable) %></td>
+        <td><%= link_to 'Destroy', uselesstable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Uselesstable', new_uselesstable_path %>

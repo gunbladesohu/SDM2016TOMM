@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924232315) do
+ActiveRecord::Schema.define(version: 20160927073302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,6 +131,15 @@ ActiveRecord::Schema.define(version: 20160924232315) do
     t.boolean  "notincludemethod"
     t.boolean  "notinludeparticipant"
     t.boolean  "notincludeparticipant"
+    t.string   "selectfield"
+    t.string   "selectoperator"
+    t.string   "selecttext"
+  end
+
+  create_table "uselesstables", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
