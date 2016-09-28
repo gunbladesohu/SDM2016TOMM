@@ -108,6 +108,15 @@ ActiveRecord::Schema.define(version: 20160927073302) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "ports", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "city"
+    t.string   "country"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "se_methods", force: :cascade do |t|
     t.integer  "methodology_id"
     t.string   "method_name"
