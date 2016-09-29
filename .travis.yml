@@ -15,6 +15,7 @@ deploy:
   api_key: 6d907bad-6e41-4fb6-b475-16f4f253ca01
 
   app:
+    master: lit-taiga-74653
     sprint2: lit-taiga-74653
 
 
