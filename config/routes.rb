@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :paperposts
+  get 'paperpost/show'
+   get 'paperpost/draft'
  devise_scope :visitor do 
     root to: 'page#home'
     match '/sessions/visitor', to: 'devise/sessions#create', via: :post
