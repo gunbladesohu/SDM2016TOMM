@@ -2,10 +2,14 @@ Rails.application.routes.draw do
  
 
 
+  resources :analysts
+  root 'analysts#index'
+  
+  
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :paperposts
  devise_scope :visitor do 
-    root to: 'page#home'
+    root to: 'pages#home'
     match '/sessions/visitor', to: 'devise/sessions#create', via: :post
   end
   devise_for :visitors, controllers: { registrations: "registrations" }

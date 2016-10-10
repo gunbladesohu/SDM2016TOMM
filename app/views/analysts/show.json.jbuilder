@@ -1,0 +1,1 @@
+json.partial! "analysts/analyst", analyst: @analyst
