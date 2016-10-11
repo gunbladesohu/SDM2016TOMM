@@ -6,8 +6,8 @@ before_script:
 - bundle exec rake db:migrate
 
 script:
-# - bundle exec cucumber
-# - bundle exec rspec
+- bundle exec cucumber
+- bundle exec rspec
 
 deploy:
   provider: heroku
