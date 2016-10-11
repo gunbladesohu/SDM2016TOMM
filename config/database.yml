@@ -25,7 +25,7 @@ development:
   <<: *default
   database: journal
   
-test:
+test: &test
   <<: *default
   database: journal
 
@@ -81,3 +81,6 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 
+
+cucumber:
+  <<: *test
