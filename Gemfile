@@ -10,6 +10,7 @@ gem 'pg', '~> 0.18'
 gem 'bootstrap_form'
 gem "bootstrap-table-rails"
 
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -46,6 +47,8 @@ gem 'bootstrap-datepicker-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec'
+  gem 'cucumber'
 end
 
 group :development do
