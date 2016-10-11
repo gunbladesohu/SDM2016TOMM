@@ -15,7 +15,7 @@ deploy:
   api_key: 6d907bad-6e41-4fb6-b475-16f4f253ca01
 
   app:
-    master: nameless-castle-22462
+    newlipi: nameless-castle-22462
     sprint2: nameless-castle-22462
 
 
