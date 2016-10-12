@@ -37,19 +37,39 @@ class PaperpostsController < ApplicationController
       end
     end
   end
+  
+  def draft
+      
+ end
 
   # PATCH/PUT /paperposts/1
   # PATCH/PUT /paperposts/1.json
   def update
-    respond_to do |format|
+    
+    if params[:commit] == 'draft'
+        @paperpost = Paperpost.new(paperpost_params)
+      respond_to do |format|
+       if @paperpost.save
+        format.html { redirect_to @paperpost, notice: 'Article was saved as draft.' }
+        format.json { render :show, status: :ok, location: @paperpost }
+      else
+        format.html { render :edit }
+        format.json { render json: @paperpost.errors, status: :unprocessable_entity }
+      end
+    
+    end
+    elsif params[:commit] == 'publish'
+        respond_to do |format|
       if @paperpost.update(paperpost_params)
-        format.html { redirect_to @paperpost, notice: 'Paperpost was successfully updated.' }
+        format.html { redirect_to @paperpost, notice: 'Paperpost was successfully submitted to moderator.' }
         format.json { render :show, status: :ok, location: @paperpost }
       else
         format.html { render :edit }
         format.json { render json: @paperpost.errors, status: :unprocessable_entity }
       end
     end
+    end
+   
   end
 
   # DELETE /paperposts/1
@@ -72,4 +92,6 @@ class PaperpostsController < ApplicationController
     def paperpost_params
       params.require(:paperpost).permit(:username, :articlecategory, :author, :title, :journalname, :description, :publishername, :pages, :volume, :status_type , :publish_date, :submitted_date)
     end
-end
+   end
+
+

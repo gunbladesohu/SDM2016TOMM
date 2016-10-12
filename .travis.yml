@@ -1,0 +1,27 @@
+language: ruby
+rvm:
+ - "2.3.0"
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+
+script:
+- bundle exec cucumber
+- bundle exec rspec
+
+deploy:
+  provider: heroku
+  api_key: 6d907bad-6e41-4fb6-b475-16f4f253ca01
+
+  app:
+    newlipi: nameless-castle-22462
+    sprint2: nameless-castle-22462
+
+
+ # on:
+ #     all_branches: true
+
+  run:
+    - "rake heroku:secrets RAILS_ENV=production"
+    - "rake db:migrate"
+    - "rake assets:precompile"
