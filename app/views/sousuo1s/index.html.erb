@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>History of search query</h1>
+
+
+      <table class="table table-striped">
+          <thead>
+              <tr>
+        <th>Title</th>
+        
+       
+        <th>Authors </th>
+        <th>Journal </th>
+        <th>Research Method</th>
+        <th>Participant</th>
+        <th>Min year</th>
+        <th>Max year</th>
+        </tr></thead>
+    <tbody>
+    <% @sousuo1s.each do |a| %>
+   <tr>
+        <%if a.title==""%>
+        <td>/</td>
+        <%else%>
+        <td><%=a.title %></td>
+        <%end%>
+        
+       
+        <%if a.authors==""%>
+        <td>/</td>
+        <%else%>
+        <td><%=a.authors %></td>
+        <%end%>
+        <%if a.journal==""%>
+        <td>/</td>
+        <%else%>
+        <td><%=a.journal %></td>
+        <%end%>
+        <%if a.research_method==""%>
+        <td>/</td>
+        <%else%>
+        <td><%=a.research_method %></td>
+        <%end%>
+        <%if a.participant==""%>
+        <td>/</td>
+        <%else%>
+        <td><%=a.participant %></td>
+        <%end%>
+         <%if a.min_year==nil%>
+        <td>/</td>
+        <%else%>
+        <td><%=a.min_year %></td>
+        <%end%>
+        <%if a.max_year==nil%>
+        <td>/</td>
+        <%else%>
+        <td><%=a.max_year %></td>
+        <%end%>
+       
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<ul class="pager">
+    <li><%= link_to 'Back',new_sousuo1_path%></li></ul>

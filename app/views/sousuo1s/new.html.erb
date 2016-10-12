@@ -3,25 +3,27 @@
      <script>
   $(document).ready(function(){
     
-     $(".participantbutton").hide();
-     $(".yearbutton").hide();
-       $(".participanttr").hide();
-     $(".yeartr").hide();
-    $(".methodadd").click(function(){
-        $(".participantbutton").show();
-        $(".participanttr").show();
+     $(".table2").hide();
+        $(".buttonhide1").hide();
+        $(".buttonhide").hide();
+        $(".buttonshow1").hide();
+    $(".buttonshow").click(function(){
+        $(".table2").show();
+         $(".buttonhide").show();
+         $(".buttonhide1").show();
+        $(".buttonshow1").show();
     });
-    $(".participantadd").click(function(){
-        $(".yearbutton").show();
-        $(".yeartr").show();
+     $(".buttonhide").click(function(){
+        $(".table2").hide();
+         $(".buttonhide1").hide();
+        $(".buttonshow1").hide();
     });
-    $(".participantremove").click(function(){
-       $(".participantbutton").hide();
-        $(".participanttr").hide();
-    });
-    $(".yearremove").click(function(){
-       $(".yearbutton").hide();
-        $(".yeartr").hide();
+     $(".buttonhide1").click(function(){
+        $(".table2").hide();
+         $(".buttonhide1").hide();
+        $(".buttonshow1").hide();
+         $(".buttonhide").hide();
+        
     });
     
 });
@@ -29,49 +31,81 @@
 <h1>Search Serler</h1>
     <%=form_for @sousuo1 do |s| %>
     <table>
-        <tr><td>Title:</td><td><%= s.text_field :title,class:"form-control"%></td><td><input type="checkbox"><span>&nbsp;Equal</span></td></tr>
-        <tr><td>Authors:</td><td><%= s.text_field :authors,class:"form-control"%></td><td><input type="checkbox"><span>&nbsp;Equal</span></td></tr>
-         <tr><td>Journal:</td><td><%= s.text_field :journal,class:"form-control"%></td><td><input type="checkbox"><span>&nbsp;Equal</span></td></tr>
-         <!--<tr><td><%= select_tag(:selectfield, options_for_select(["Title","Author","Journal"])) %> </td>-->
-         <!--<td><%= select_tag(:selectoperator, options_for_select(["Equal","Contain"])) %> </td>-->
+        <tr><td>Title:</td><td><%= s.text_field :title,class:"form-control"%></td><td></td>
+        <td>Authors:</td><td><%= s.text_field :authors,class:"form-control"%></td></tr>
         </tr>
+        <tr><td>Publish year</td><td>From<%=s.text_field :min_year, class:"form-control int",type:"date" %></td><td></td><td>
+        To<%=s.text_field :max_year,class:"form-control int",type:"date" %></td> </tr>
+         <tr><td>Paper Status:</td><td><%= s.select:status,
+        options_for_select(@status),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludestatus %><span>&nbsp;Tick If Not Include</span>
+        </td>
+         <td>Research Metrix:</td><td><%= s.select:metrix,
+        options_for_select(@metrix),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludemetrix %><span>&nbsp;Tick If Not Include</span>
+        </td></tr>
+        <tr><td>Research method:</td><td><%= s.select:research_method,
+        options_for_select(@research_method),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludemethod %><span>&nbsp;Tick If Not Include</span>
+        </td><td>Participant:</td><td><%= s.select:participant,
+        options_for_select(@participant),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludeparticipant %><span>&nbsp;Tick If Not Include</span>
+        </td></tr>
+        
            
             </table>
        
        <hr>
-        <table style="margin-top:50px;float:left" id="more1">
-        <tr><td>Research method:</td><td><%= s.select:research_method,
+       
+       <table class="table2">
+        <tr><td>Title:</td><td><%= s.text_field :title1,class:"form-control"%></td><td></td>
+        <td>Authors:</td><td><%= s.text_field :authors1,class:"form-control"%></td></tr>
+        </tr>
+        <tr><td>Publish year</td><td>From<%=s.text_field :min_year1, class:"form-control int",type:"date" %></td><td></td><td>
+        To<%=s.text_field :max_year1,class:"form-control int",type:"date" %></td> </tr>
+         <tr><td>Paper Status:</td><td><%= s.select:status1,
+        options_for_select(@status),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludestatus1 %><span>&nbsp;Tick If Not Include</span>
+        </td>
+         <td>Research Metrix:</td><td><%= s.select:metrix1,
+        options_for_select(@metrix),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludemetrix1 %><span>&nbsp;Tick If Not Include</span>
+        </td></tr>
+        <tr><td>Research method:</td><td><%= s.select:research_method1,
         options_for_select(@research_method),:include_blank =>true, class:"form-control"%>
-        </td><td><%= s.check_box :notincludemethod %><span>&nbsp;Tick If Not Include</span>
-        </td></tr>
-       <tr class="participanttr"><td>Participant:</td><td><%= s.select:participant,
+        </td><td><%= s.check_box :notincludemethod1 %><span>&nbsp;Tick If Not Include</span>
+        </td><td>Participant:</td><td><%= s.select:participant1,
         options_for_select(@participant),:include_blank =>true, class:"form-control"%>
-        </td><td><%= s.check_box :notincludeparticipant %><span>&nbsp;Tick If Not Include</span>
+        </td><td><%= s.check_box :notincludeparticipant1 %><span>&nbsp;Tick If Not Include</span>
         </td></tr>
-        <tr class="yeartr"><td>Publish year</td><td>From<%=s.text_field :min_year, class:"form-control int",type:"number" %></td><td>
-        To<%=s.text_field :max_year,class:"form-control int",type:"number" %></td> </tr>
         
-        <tr><td><%=s.submit "search", class:"btn btn-success"%></td></tr>
-        </table>
+           
+            </table>
+       
+       
+       
+        <div style="margin-top:30px">
+        <%=s.submit "search", class:"btn btn-success"%>
+        </div>
+       
         
       
         <%end%>
-        <table style="margin-top:55px">
-            <tr><td><button class="btn btn-primary methodadd"> Add</button></button></td></tr>
-            <tr class="participantbutton"><td><button class="btn btn-primary participantadd"> Add</button></button>
-            <button class="btn btn-primary participantremove"> remove</button></td></tr>
-            <tr class="yearbutton"><td>
-                <button class="btn btn-primary yearadd"> Add</button></button>
-            <button class="btn btn-primary yearremove"> remove</button>
-            </td></tr>
-        </table>
-         
+        <div style="position:absolute;left:13%;top:53%">
+        <button class="btn-primary buttonshow"> <span class="glyphicon glyphicon-menu-down"></span></button>
+       <button class="btn-primary buttonhide"> <span class="glyphicon glyphicon-menu-up "></span></button>
+       </div>
+        <div style="position:absolute;left:13%;top:80%">
+        <button class="btn-primary buttonshow1"> <span class="glyphicon glyphicon-menu-down"></span></button>
+       <button class="btn-primary buttonhide1"> <span class="glyphicon glyphicon-menu-up "></span></button>
+       </div>
+        <ul class="pager" style="position:absolute;margin-left:0;margin-top:5%">
+         <li><%= link_to'Search Query',sousuo1s_path%></li>
+         </ul>
         <ul class="pager" style="position:absolute;margin-left:30%;margin-top:10%">
         
         <li><%= link_to'Back',books_path%></li>
+         
         </ul>
        
- <script>  
- 
-     
- </script>
+       

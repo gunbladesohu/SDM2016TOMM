@@ -1,1 +1,0 @@
-json.array! @uselesstables, partial: 'uselesstables/uselesstable', as: :uselesstable

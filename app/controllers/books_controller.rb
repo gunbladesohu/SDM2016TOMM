@@ -7,9 +7,9 @@ class BooksController < ApplicationController
    
      @books= Book.where(["title like ?","%#{params[:search]}%"])
      @books= @books.order(sort_column + " " + sort_direction)
-   
- 
-   
+  end 
+  def newindex
+   @books = Book.all
   end 
   # GET /books/1s
   # GET /books/1.json

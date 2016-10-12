@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927073302) do
+ActiveRecord::Schema.define(version: 20161010055504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,8 +118,8 @@ ActiveRecord::Schema.define(version: 20160927073302) do
   create_table "sousuo1s", force: :cascade do |t|
     t.string   "title"
     t.string   "research_method"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "min_year"
     t.integer  "max_year"
     t.string   "authors"
@@ -134,6 +134,22 @@ ActiveRecord::Schema.define(version: 20160927073302) do
     t.string   "selectfield"
     t.string   "selectoperator"
     t.string   "selecttext"
+    t.string   "status"
+    t.string   "metrix"
+    t.boolean  "notincludemetrix"
+    t.boolean  "notincludestatus"
+    t.string   "title1"
+    t.integer  "min_year1"
+    t.integer  "max_year1"
+    t.string   "authors1"
+    t.boolean  "notincludemethod1"
+    t.string   "research_method1"
+    t.boolean  "notincludeparticipant1"
+    t.string   "participant1"
+    t.boolean  "notincludemetrix1"
+    t.string   "metrix1"
+    t.boolean  "notincludestatus1"
+    t.string   "status1"
   end
 
   create_table "uselesstables", force: :cascade do |t|

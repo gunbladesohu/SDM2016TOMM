@@ -37,11 +37,11 @@ RSpec.describe BooksController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all books as @books" do
-      book = Book.create! valid_attributes
-      get :index, params: {}, session: valid_session
-      expect(assigns(:books)).to eq([book])
+   it "returns http success" do
+      get :index
+      expect(response).to have_http_status(:success)
     end
+    
   end
 
   describe "GET #show" do
@@ -50,13 +50,24 @@ RSpec.describe BooksController, type: :controller do
       get :show, params: {id: book.to_param}, session: valid_session
       expect(assigns(:book)).to eq(book)
     end
+    #   it "renders the :show template "  do
+    #   sousuo1 = create(:sousuo1)
+    #   get :show, id: sousuo1
+    #   expect(response).to render_template :show
+    # end
+  end
+    describe "GET index" do
+    it "has a 200 status code" do
+      get :index
+      expect(response.status).to eq(200)
+    end
   end
 
   describe "GET #new" do
-    it "assigns a new book as @book" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:book)).to be_a_new(Book)
-    end
+    # it "assigns a new book as @book" do
+    #   get :new, params: {}, session: valid_session
+    #   expect(assigns(:book)).to be_a_new(Book)
+    # end
   end
 
   describe "GET #edit" do
