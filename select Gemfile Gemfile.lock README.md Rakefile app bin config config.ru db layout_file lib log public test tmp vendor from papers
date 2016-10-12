@@ -1,0 +1,16 @@
+               List of relations
+ Schema |         Name         | Type  | Owner  
+--------+----------------------+-------+--------
+ public | ar_internal_metadata | table | ubuntu
+ public | articles             | table | ubuntu
+ public | pages                | table | ubuntu
+ public | papers               | table | ubuntu
+ public | schema_migrations    | table | ubuntu
+ public | serlerusers          | table | ubuntu
+ public | userentries          | table | ubuntu
+ public | userfinals           | table | ubuntu
+ public | users                | table | ubuntu
+ public | userserlers          | table | ubuntu
+ public | usertests            | table | ubuntu
+(11 rows)
+

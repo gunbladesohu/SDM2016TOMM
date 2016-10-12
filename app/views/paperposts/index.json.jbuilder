@@ -1,0 +1,1 @@
+json.array! @paperposts, partial: 'paperposts/paperpost', as: :paperpost

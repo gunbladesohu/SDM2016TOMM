@@ -1,0 +1,147 @@
+<!--%= form_for(analyst) do |f| % -->
+<%= form_for @analyst, :html => { :class => "form-horizontal paperpost" } do |f| %>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+  <% if analyst.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(analyst.errors.count, "error") %> prohibited this analyst from being saved:</h2>
+
+      <ul>
+      <% analyst.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+     <%= f.label :research_method, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+        <div class="dropdown">
+          <select id='purpose'>
+    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">catagories
+    <option value="0">Field Observation</option>
+<option value="1">Experiment</option>
+<option value="2">Interviews</option>
+<option value="3">Survey</option>
+<option value="4">Case study</option>
+          </select>
+      </div>
+    </div> 
+  </div>
+   
+   
+   <div class="form-group">
+     <%= f.label :reseach_participants, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+        <div class="dropdown">
+          <select id='purpose'>
+    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">participants
+    <option value="0">Postgraduate</option>
+<option value="1">Experiment</option>
+<option value="2">Practitioners</option>
+<option value="3">Survey</option>
+<option value="4">Undergraduate</option>
+          </select>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :benefit_from_test, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :benefit_from_test, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:benefit_from_test) %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :context, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :context, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:context) %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :result, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :result, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:result) %>
+  </div>
+  
+ <div class="form-group">
+     <%= f.label :se_methodology, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+        <div class="dropdown">
+          <select id='purpose'>
+    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">options
+<option value="0">Waterfall-it is a</option>
+<option value="1">Spiral</option>
+<option value="2">XP</option>
+<option value="3">Rational Unified Process</option>
+<option value="4">Scrum</option>
+<option value="5">Crystal</option>
+<option value="6">Agile</option>
+<option value="7">Clear room</option>
+<option value="8">Feature Driven Development</option>
+<option value="9">Modal Driven Development</option>
+<option value="10">Domain Driven Development</option>
+<option value="11">Formal methods</option>
+<option value="12">Problem Driven Development</option>
+<option value="13">Cloud Computing</option>
+<option value="14">Service Oriented Development</option>
+<option value="15">Aspect Oriented Development</option>
+<option value="16">Value Driven Development</option>
+<option value="17">Product Driven Development</option>
+          </select>
+      </div>
+    </div> 
+  </div>
+  
+ <div class="form-group">
+     <%= f.label :se_method, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+        <div class="dropdown">
+          <select id='purpose'>
+    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">options
+<option value="0">Test Driven Development</option>
+<option value="1">Behavoir Driven Development</option>
+<option value="2">Pair Programming</option>
+<option value="3">Planning Poker</option>
+<option value="4">Daily Standup Meetings</option>
+<option value="5">Story boards</option>
+<option value="6">User story planning</option>
+<option value="7">continous integration</option>
+<option value="8">retrospective</option>
+<option value="9">burn down charts</option>
+<option value="10">requirements prioritisation</option>
+<option value="11">version control</option>
+<option value="12">code sharing</option>
+
+          </select>
+      </div>
+    </div> 
+  </div>
+  
+ 
+ 
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit 'save', :class => 'btn btn-success' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                analysts_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+  
+  
+  <% end %>
+  
+  

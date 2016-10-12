@@ -1,0 +1,4 @@
+class Analyst < ApplicationRecord
+
+ 
+end

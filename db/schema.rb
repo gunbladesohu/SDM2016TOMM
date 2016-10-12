@@ -10,11 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908061421) do
+ActiveRecord::Schema.define(version: 20160930224536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "analysts", force: :cascade do |t|
+    t.string   "research_method"
+    t.string   "reseach_participants"
+    t.string   "benefit_from_test"
+    t.string   "context"
+    t.string   "result"
+    t.string   "se_methodology"
+    t.string   "se_method"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "paperposts", force: :cascade do |t|
+    t.string   "username"
+    t.string   "articlecategory"
+    t.string   "author"
+    t.string   "title"
+    t.string   "journalname"
+    t.string   "description"
+    t.string   "publishername"
+    t.integer  "pages"
+    t.string   "volume"
+    t.datetime "publish_date"
+    t.datetime "submitted_date"
+    t.string   "status_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "serlerusers", force: :cascade do |t|
   create_table "authors", force: :cascade do |t|
     t.string   "author_name"
     t.string   "author_gender"
@@ -52,6 +82,39 @@ ActiveRecord::Schema.define(version: 20160908061421) do
     t.integer  "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "userentries", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+
+  create_table "userserlers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "visitors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_visitors_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_visitors_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "papers", force: :cascade do |t|
@@ -110,4 +173,5 @@ ActiveRecord::Schema.define(version: 20160908061421) do
   add_foreign_key "paper_authors", "papers"
   add_foreign_key "papers", "users"
   add_foreign_key "se_methods", "methodologies"
+end
 end
