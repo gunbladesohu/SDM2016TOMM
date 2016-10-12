@@ -24,6 +24,7 @@
     </tr>
   </thead>
   <tbody>
+    <%= link_to t('.new', :default => t("helpers.links.new")), new_paperpost_path, :class => 'btn btn-primary' %>
     <% @paperposts.each do |paperpost| %>
       <tr>
         <!--<td><%= link_to paperpost.id, paperpost_path(paperpost) %></td>-->
@@ -41,7 +42,9 @@
         <td><%= paperpost.submitted_date %></td>
         <td><%=l paperpost.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <!--<%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_paperpost_path(paperpost), :class => 'btn btn-default btn-xs' %>-->
+                       <%= link_to t('.edit' , :default => "View Draft"),
                       edit_paperpost_path(paperpost), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       paperpost_path(paperpost),
@@ -54,6 +57,4 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_paperpost_path,
-            :class => 'btn btn-success' %>
+
