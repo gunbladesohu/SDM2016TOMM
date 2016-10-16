@@ -8,7 +8,8 @@
 
 
 <br>
-<table style="margin-left:30%">
+
+<table class="displaytable" style="margin-left:30%;">
   <tr><td><label class="checkbox-inline">
       <input type="checkbox" class="title" checked="checked">Title
     </label></td><td>
@@ -64,6 +65,7 @@
     </tr>
     
     </table>
+
  <table  class="table table-striped pretty">
   <thead>
     <tr>
@@ -124,6 +126,9 @@
     <li><%= link_to 'Back',new_sousuo1_path%></li></ul>
     <script>
   $(document).ready(function(){
+       $(".displaybutton").click(function(){
+        $(".dsiplaycolumn").toggle();
+    });
     $(".title").click(function(){
         $(".title1").toggle();
     });

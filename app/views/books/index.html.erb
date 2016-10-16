@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <table>
-  <tr><td  style="width:40%">
+  <tr><td  style="width:400px">
 <h1>Search Serler</h1>
 <%= form_tag books_path, :method => 'get' do %>
   <%= text_field_tag :search,params[:search], class:"form-control" %>
@@ -8,36 +8,27 @@
   <%= submit_tag"Search", class:"btn btn-success searchbox"  %>
   
 <% end %>
-
 <ul class="pager">
-  <li>
-<%=link_to "Advanced search",new_sousuo1_path %></li></ul>
+    <li style="margin-left:0px;margin-right:150px">
+<%=link_to "All Books",newindex_books_path %></li>
+<li><%=link_to "Advanced search",new_sousuo1_path %></li></ul>
 </td>
-<td><table>
+<td >
+    <button class="columnbutton btn btn-primary "><span>Click To Display </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-arrow-left spanarrow"></span></button>
+    <div style="border:2px gray solid;margin-left:42px"class="columntable">
+        <table>
   <tr><td><label class="checkbox-inline">
       <input type="checkbox" class="title" checked="checked">Title
     </label></td><td>
   <label class="checkbox-inline">
       <input type="checkbox" class="Username" checked="checked">Username
-    </label></td><td>
-    <label class="checkbox-inline">
-      <input type="checkbox" class="Submitted_date" checked="checked">Submitted date
     </label></td>
-    <td>
-    <label class="checkbox-inline">
-      <input type="checkbox" class="Research_method" checked="checked">Research method
-    </label></td></tr>
+    </tr>
    <tr><td> <label class="checkbox-inline">
       <input type="checkbox" class="Paper_status" checked="checked">Paper status
     </label></td><td>
         <label class="checkbox-inline">
       <input type="checkbox" class="Author" checked="checked">Authors
-    </label></td><td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Journal" checked="checked">Journal
-    </label></td><td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Publish_year" checked="checked">Publish year
     </label></td></tr>
         <tr><td><label class="checkbox-inline">
       <input type="checkbox" class="Publish_volume" checked="checked">Publish volume
@@ -46,14 +37,7 @@
         <label class="checkbox-inline">
       <input type="checkbox" class="Publish_pages" checked="checked">Publish pages
     </label>
-    </td><td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Publish_month" checked="checked">Publish month
-    </label>
-    </td><td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Credibility_rate" checked="checked">Credibility rate
-    </label><td></tr>
+    </td></tr>
     <tr><td>
         <label class="checkbox-inline">
       <input type="checkbox" class="Research_metrix" checked="checked">Research metrix
@@ -61,13 +45,41 @@
     <label class="checkbox-inline">
       <input type="checkbox" class="Research_aim" checked="checked">Research aim
     </label></td>
+    
+    <tr>
+        <td>
+    <label class="checkbox-inline">
+      <input type="checkbox" class="Research_method" checked="checked">Research method
+    </label></td>
+    <td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Publish_year" checked="checked">Publish year
+    </label></td>
+    </tr>
+    <tr><td>
+    <label class="checkbox-inline">
+      <input type="checkbox" class="Submitted_date" checked="checked">Submitted date
+    </label></td>
+    <td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Journal" checked="checked">Journal
+    </label></td>
+    <tr><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Publish_month" checked="checked">Publish month
+    </label>
+    </td>
     <td>
     <label class="checkbox-inline">
       <input type="checkbox" class="Participant" checked="checked">Participant
-    </label></td>
+    </label></td></tr>
+    </table></div>
+    
+    </td>
     </tr>
-    </table>
-</td>
+    
+    
+</table>
 <table  class="table table-striped pretty">
   <thead>
     <tr>
@@ -89,6 +101,7 @@
       <th class="Research_aim1"><%= sortable "research_aim" %> </th>
      
       <th class="Participant1"><%= sortable "participant" %> </th>
+      
         <th>Show</th>
       <th colspan="3"></th>
     
@@ -129,6 +142,21 @@
 <%= link_to 'New Book', new_book_path %>
 <script>
   $(document).ready(function(){
+      
+  var flag = false;
+    $('.columnbutton').click(function(){
+         if( flag == false){
+       $('.columnbutton').empty();
+       $('.columnbutton').append("<span>Click To Display </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class='glyphicon glyphicon-arrow-down'></span>");
+       flag = true;
+    }
+    else{
+        $('.columnbutton').empty();
+       $('.columnbutton').append("<span>Click To Display </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-arrow-left'></span>");
+       flag = false;
+    }
+  $('.columntable').toggle();
+});
     $(".title").click(function(){
         $(".title1").toggle();
     });

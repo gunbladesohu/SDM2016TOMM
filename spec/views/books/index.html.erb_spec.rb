@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "books/index", type: :view do
+  
   before(:each) do
     assign(:books, [
       Book.create!(
@@ -41,24 +42,38 @@ RSpec.describe "books/index", type: :view do
       )
     ])
   end
+   before do
+    controller.singleton_class.class_eval do
+      protected
+      def sort_column
+        "title"
+      end
 
+      def sort_direction
+        "desc"
+      end
+
+      helper_method :sort_column, :sort_direction
+    end
+  end
   it "renders a list of books" do
     render
-    assert_select "tr>td", :text => "Username".to_s, :count => 2
+    assert_select "tr>td", :text => "Username".to_s, :count => 3
     assert_select "tr>td", :text => "Paper Status".to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
-    assert_select "tr>td", :text => 3.to_s, :count => 2
-    assert_select "tr>td", :text => "Authors".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr>td", :text => 2.to_s, :count => 0
+    assert_select "tr>td", :text => 3.to_s, :count => 0
+    assert_select "tr>td", :text => "Authors".to_s, :count => 3
+    assert_select "tr>td", :text => "MyText".to_s, :count => 6
+    assert_select "tr>td", :text => "MyText".to_s, :count => 6
     assert_select "tr>td", :text => 4.to_s, :count => 2
     assert_select "tr>td", :text => 5.to_s, :count => 2
     assert_select "tr>td", :text => 6.to_s, :count => 2
     assert_select "tr>td", :text => "Publish Month".to_s, :count => 2
     assert_select "tr>td", :text => "Credibility Rate".to_s, :count => 2
     assert_select "tr>td", :text => "Research Metrix".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr>td", :text => "MyText".to_s, :count => 6
     assert_select "tr>td", :text => "Research Method".to_s, :count => 2
-    assert_select "tr>td", :text => "Participant".to_s, :count => 2
+    assert_select "tr>td", :text => "Participant".to_s, :count => 3
   end
+ 
 end

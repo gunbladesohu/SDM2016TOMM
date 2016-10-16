@@ -33,3 +33,6 @@
 .submitbutton{
   margin-top:20%;
 }
+.columnbutton{
+  padding-right:0px;position:absolute;top:126px;left:622px;width:272px
+}

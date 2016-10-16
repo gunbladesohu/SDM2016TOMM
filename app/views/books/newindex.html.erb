@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Serler Books</h1>
+
+    
+
+
+    <% @books.each do |b| %>
+    <table class="table table-striped" style="margin-top:50px">
+     <tr><td>ID:</td>  <td><%=b.id %></td></tr> 
+     <tr><td>Title:</td>  <td><%=b.title %></td></tr> 
+     <tr><td>Username:</td>  <td><%=b.username %></td></tr> 
+     <tr><td>Submitted Date:</td>  <td><%=b.submitted_date %></td></tr> 
+     <tr><td>Research Method:</td>  <td><%=b.research_method %></td></tr> 
+     <tr><td>Paper Status:</td>  <td><%=b.paper_status %></td></tr> 
+     <tr><td>Authors:</td>  <td><%=b.authors %></td></tr> 
+     <tr><td>Journal:</td>  <td><%=b.journal %></td></tr> 
+     <tr><td>Publish Year:</td>  <td><%=b.publish_year %></td></tr> 
+     <tr><td>Publish Volume:</td>  <td><%=b.publish_volume %></td></tr> 
+     <tr><td>Publish Pages:</td>  <td><%=b.publish_pages %></td></tr> 
+     <tr><td>Publish Month:</td>  <td><%=b.publish_month %></td></tr> 
+     <tr><td>Redibility Rate:</td>  <td><%=b.credibility_rate %></td></tr> 
+     <tr><td>Research Metrix:</td>  <td><%=b.research_metrix %></td></tr> 
+     <tr><td>Research Aim：</td>  <td><%=b.research_aim %></td></tr> 
+     
+        <tr><td>Participant：</td><td><%=b.participant %></td></tr> 
+       
+        
+     
+     </table>
+     <hr>
+    <% end %>
+    <ul class="pager">
+    <li><%= link_to 'Back',books_path%></li></ul>
+
+
+

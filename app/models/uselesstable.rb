@@ -1,2 +1,0 @@
-class Uselesstable < ApplicationRecord
-end
