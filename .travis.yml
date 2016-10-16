@@ -6,6 +6,8 @@ notification:
 script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
+- bundle exec rspec
+- "DISPLAY=:99.0 bundle exec cucumber"
 deploy:
   provider: heroku
   api_key:
