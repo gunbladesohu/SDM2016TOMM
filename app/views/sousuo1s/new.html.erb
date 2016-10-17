@@ -3,35 +3,55 @@
      <script>
   $(document).ready(function(){
     
-     $(".table2").hide();
+     $(".table1").hide();
+      $(".table2").hide();
         $(".buttonhide1").hide();
         $(".buttonhide").hide();
         $(".buttonshow1").hide();
+         $(".buttonhide2").hide();
+        $(".buttonshow2").hide();
     $(".buttonshow").click(function(){
-        $(".table2").show();
+        $(".table1").show();
          $(".buttonhide").show();
          $(".buttonhide1").show();
         $(".buttonshow1").show();
     });
      $(".buttonhide").click(function(){
+        $(".table1").hide();
         $(".table2").hide();
+        $(".buttonhide").hide();
          $(".buttonhide1").hide();
         $(".buttonshow1").hide();
+        $(".buttonhide2").hide();
+        $(".buttonshow2").hide();
     });
      $(".buttonhide1").click(function(){
         $(".table2").hide();
+         $(".buttonhide2").hide();
+        $(".buttonshow2").hide();
          $(".buttonhide1").hide();
-        $(".buttonshow1").hide();
-         $(".buttonhide").hide();
         
     });
-    
+    $(".buttonshow1").click(function(){
+        $(".table2").show();
+         $(".buttonhide2").show();
+         $(".buttonhide1").show();
+        $(".buttonshow2").show();
+         
+        
+    });
+    $(".buttonhide2").click(function(){
+        $(".table2").hide();
+         $(".buttonhide2").hide();
+          $(".buttonhide1").hide();
+         $(".buttonshow2").hide();
+    });
 });
 </script>
 <h1>Search Serler</h1>
     <%=form_for @sousuo1 do |s| %>
     <table>
-        <tr><td>Title:</td><td><%= s.text_field :title,class:"form-control"%></td><td></td>
+        <tr><td>Title:</td><td><%= s.text_field :title,class:"form-control"%></td>
         <td>Authors:</td><td><%= s.text_field :authors,class:"form-control"%></td></tr>
         </tr>
         <tr><td>Publish year</td><td>From<%=s.text_field :min_year, class:"form-control int",type:"date" %></td><td></td><td>
@@ -54,11 +74,11 @@
         
            
             </table>
+   
        
-       <hr>
-       
-       <table class="table2">
-        <tr><td>Title:</td><td><%= s.text_field :title1,class:"form-control"%></td><td></td>
+       <table class="table1" style="margin-top:5%;">
+          
+        <tr><td>Title:</td><td><%= s.text_field :title1,class:"form-control"%></td>
         <td>Authors:</td><td><%= s.text_field :authors1,class:"form-control"%></td></tr>
         </tr>
         <tr><td>Publish year</td><td>From<%=s.text_field :min_year1, class:"form-control int",type:"date" %></td><td></td><td>
@@ -81,28 +101,55 @@
         
            
             </table>
+               
+            <table class="table2" style="margin-top:5%;">
+         
+        <tr><td>Title:</td><td><%= s.text_field :title2,class:"form-control"%></td>
+        <td>Authors:</td><td><%= s.text_field :authors2,class:"form-control"%></td></tr>
+        
+        <tr><td>Publish year</td><td>From<%=s.text_field :min_year2, class:"form-control int",type:"date" %></td><td></td><td>
+        To<%=s.text_field :max_year2,class:"form-control int",type:"date" %></td> </tr>
+         <tr><td>Paper Status:</td><td><%= s.select:status2,
+        options_for_select(@status),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludestatus2 %><span>&nbsp;Tick If Not Include</span>
+        </td>
+         <td>Research Metrix:</td><td><%= s.select:metrix2,
+        options_for_select(@metrix),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludemetrix2 %><span>&nbsp;Tick If Not Include</span>
+        </td></tr>
+        <tr><td>Research method:</td><td><%= s.select:research_method2,
+        options_for_select(@research_method),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludemethods2 %><span>&nbsp;Tick If Not Include</span>
+        </td><td>Participant:</td><td><%= s.select:participant2,
+        options_for_select(@participant),:include_blank =>true, class:"form-control"%>
+        </td><td><%= s.check_box :notincludeparticipant2 %><span>&nbsp;Tick If Not Include</span>
+        </td></tr>
+       </table>
        
-       
-       
-        <div style="margin-top:30px">
+       <div style="margin-top:30px;margin-left:35%">
         <%=s.submit "search", class:"btn btn-success"%>
         </div>
+        
        
         
       
         <%end%>
-        <div style="position:absolute;left:13%;top:53%">
+        
+        
+        <div style="position:absolute;left:13%;top:50%">
         <button class="btn-primary buttonshow"> <span class="glyphicon glyphicon-menu-down"></span></button>
        <button class="btn-primary buttonhide"> <span class="glyphicon glyphicon-menu-up "></span></button>
        </div>
-        <div style="position:absolute;left:13%;top:80%">
+        <div style="position:absolute;left:13%;top:82%">
         <button class="btn-primary buttonshow1"> <span class="glyphicon glyphicon-menu-down"></span></button>
        <button class="btn-primary buttonhide1"> <span class="glyphicon glyphicon-menu-up "></span></button>
        </div>
-        <ul class="pager" style="position:absolute;margin-left:0;margin-top:5%">
-         <li><%= link_to'Search Query',sousuo1s_path%></li>
-         </ul>
-        <ul class="pager" style="position:absolute;margin-left:30%;margin-top:10%">
+       <div style="position:absolute;left:13%;top:114%">
+        <button class="btn-primary buttonshow2"> <span class="glyphicon glyphicon-menu-down"></span></button>
+       <button class="btn-primary buttonhide2"> <span class="glyphicon glyphicon-menu-up "></span></button>
+       </div>
+       
+        <ul class="pager" style="position:absolute;margin-left:30%">
         
         <li><%= link_to'Back',books_path%></li>
          

@@ -34,5 +34,8 @@
   margin-top:20%;
 }
 .columnbutton{
-  padding-right:0px;position:absolute;top:126px;left:622px;width:272px
+  padding-right:0px;position:absolute;top:126px;left:580px;width:272px
+}
+.statusselect{
+  width:150%;
 }

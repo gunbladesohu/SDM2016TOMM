@@ -8,55 +8,26 @@
 
 
 <br>
-
-<table class="displaytable" style="margin-left:30%;">
+ <button class="columnbutton btn btn-primary " style="width:290px"><span>Toggle Columns </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-arrow-down spanarrow"></span></button>
+ 
+<table class="columntable"style="border:2px gray solid;margin-left:35.4%;margin-top:-3%;z-index:1;">
   <tr><td><label class="checkbox-inline">
       <input type="checkbox" class="title" checked="checked">Title
     </label></td><td>
   <label class="checkbox-inline">
       <input type="checkbox" class="Username" checked="checked">Username
-    </label></td><td>
+    </label></td>
+    </tr><tr><td>
     <label class="checkbox-inline">
       <input type="checkbox" class="Submitted_date" checked="checked">Submitted date
     </label></td>
     <td>
     <label class="checkbox-inline">
       <input type="checkbox" class="Research_method" checked="checked">Research method
-    </label></td>
+    </label></td></tr>
+    <tr>
     <td> <label class="checkbox-inline">
       <input type="checkbox" class="Paper_status" checked="checked">Paper status
-    </label></td></tr>
-   <tr><td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Author" checked="checked">Authors
-    </label></td><td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Journal" checked="checked">Journal
-    </label></td><td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Publish_year" checked="checked">Publish year
-    </label></td><td><label class="checkbox-inline">
-      <input type="checkbox" class="Publish_volume" checked="checked">Publish volume
-    </label>
-    </td><td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Publish_pages" checked="checked">Publish pages
-    </label>
-    </td></tr>
-        <tr><td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Publish_month" checked="checked">Publish month
-    </label>
-    </td><td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Credibility_rate" checked="checked">Credibility rate
-    </label></td>
-      <td>
-        <label class="checkbox-inline">
-      <input type="checkbox" class="Research_metrix" checked="checked">Research metrix
-    </label></td><td>
-    <label class="checkbox-inline">
-      <input type="checkbox" class="Research_aim" checked="checked">Research aim
     </label></td>
     <td>
     <label class="checkbox-inline">
@@ -64,7 +35,38 @@
     </label></td>
     </tr>
     
+   <tr><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Author" checked="checked">Authors
+    </label></td><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Journal" checked="checked">Journal
+    </label></td></tr><tr><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Publish_year" checked="checked">Publish year
+    </label></td><td><label class="checkbox-inline">
+      <input type="checkbox" class="Publish_volume" checked="checked">Publish volume
+    </label>
+    </td></tr>
+    
+        <tr><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Publish_month" checked="checked">Publish month
+    </label>
+    </td><td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Credibility_rate" checked="checked">Credibility rate
+    </label></td></tr><tr>
+      <td>
+        <label class="checkbox-inline">
+      <input type="checkbox" class="Research_metrix" checked="checked">Research metrix
+    </label></td><td>
+    <label class="checkbox-inline">
+      <input type="checkbox" class="Research_aim" checked="checked">Research aim
+    </label></td></tr>
+    
     </table>
+
 
  <table  class="table table-striped pretty">
   <thead>
@@ -80,7 +82,7 @@
       <th class="Journal1">Journal</th>
       <th class="Publish_year1">Publish Year </th>
       <th class="Publish_volume1">Publish Volume  </th>
-      <th class="Publish_pages1">Publish Pages </th>
+   
       <th class="Publish_month1">Publish Month</th>
       <th class="Credibility_rate1">Credibility Rate  </th>
       <th class="Research_metrix1">Research Metrix  </th>
@@ -107,7 +109,7 @@
         <td class="Journal1"><%= book.journal %></td>
         <td class="Publish_year1"><%= book.publish_year %></td>
         <td class="Publish_volume1"><%= book.publish_volume %></td>
-        <td class="Publish_pages1"><%= book.publish_pages %></td>
+        
         <td class="Publish_month1"><%= book.publish_month %></td>
         <td class="Credibility_rate1"><%= book.credibility_rate %></td>
         <td class="Research_metrix1"><%= book.research_metrix %></td>
@@ -121,14 +123,15 @@
   </tbody>
 </table>
 
-   
+    <ul class="pager" style="position:absolute;margin-left:0;margin-top:5%">
+         <li><%= link_to'Search Query',sousuo1s_path%></li>
+         </ul>
     <ul class="pager">
     <li><%= link_to 'Back',new_sousuo1_path%></li></ul>
+    
     <script>
   $(document).ready(function(){
-       $(".displaybutton").click(function(){
-        $(".dsiplaycolumn").toggle();
-    });
+      
     $(".title").click(function(){
         $(".title1").toggle();
     });
@@ -154,9 +157,7 @@
     $(".Publish_volume").click(function(){
         $(".Publish_volume1").toggle();
     });
-     $(".Publish_pages").click(function(){
-        $(".Publish_pages1").toggle();
-    });
+    
      $(".Publish_month").click(function(){
         $(".Publish_month1").toggle();
     });
@@ -179,5 +180,19 @@
         $(".Participant1").toggle();
     });
     
+     var flag = false;
+    $('.columnbutton').click(function(){
+         if( flag == false){
+       $('.columnbutton').empty();
+       $('.columnbutton').append("<span>Toggle Columns </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class='glyphicon glyphicon-arrow-left'></span>");
+       flag = true;
+    }
+    else{
+        $('.columnbutton').empty();
+       $('.columnbutton').append("<span>Toggle Columns </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-arrow-down'></span>");
+       flag = false;
+    }
+  $('.columntable').toggle();
+});
 });
 </script>

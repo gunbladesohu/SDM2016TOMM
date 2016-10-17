@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010055504) do
+ActiveRecord::Schema.define(version: 20161014002446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -150,6 +150,18 @@ ActiveRecord::Schema.define(version: 20161010055504) do
     t.string   "metrix1"
     t.boolean  "notincludestatus1"
     t.string   "status1"
+    t.string   "title2"
+    t.integer  "min_year2"
+    t.integer  "max_year2"
+    t.string   "authors2"
+    t.boolean  "notincludemethods2"
+    t.string   "research_method2"
+    t.boolean  "notincludeparticipant2"
+    t.string   "participant2"
+    t.boolean  "notincludemetrix2"
+    t.string   "metrix2"
+    t.boolean  "notincludestatus2"
+    t.string   "status2"
   end
 
   create_table "uselesstables", force: :cascade do |t|

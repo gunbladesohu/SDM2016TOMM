@@ -7,13 +7,19 @@ RSpec.describe Sousuo1, type: :model do
     it "Has many search fields" do 
       should have_many(:search_fields) 
     end 
+    
   end 
+  
+# sad
 
-
-   context 'CRUD' do 
+    context 'CRUD' do  
+        
+        
+        
      it 'could be created' do 
       search = FactoryGirl.create(:Sousuo1) 
       expect(Sousuo1).to be_valid 
+      
      end 
  
 

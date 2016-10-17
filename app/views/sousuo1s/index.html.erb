@@ -10,7 +10,8 @@
         
        
         <th>Authors </th>
-        <th>Journal </th>
+        <th>Metrix </th>
+        <th>Paper Status </th>
         <th>Research Method</th>
         <th>Participant</th>
         <th>Min year</th>
@@ -19,43 +20,27 @@
     <tbody>
     <% @sousuo1s.each do |a| %>
    <tr>
-        <%if a.title==""%>
-        <td>/</td>
-        <%else%>
-        <td><%=a.title %></td>
-        <%end%>
+       
+        <td><%=a.title %>&nbsp;&nbsp;<%=a.title1 %>&nbsp;&nbsp;<%=a.title2 %></td>
+        
         
        
-        <%if a.authors==""%>
-        <td>/</td>
-        <%else%>
-        <td><%=a.authors %></td>
-        <%end%>
-        <%if a.journal==""%>
-        <td>/</td>
-        <%else%>
-        <td><%=a.journal %></td>
-        <%end%>
-        <%if a.research_method==""%>
-        <td>/</td>
-        <%else%>
-        <td><%=a.research_method %></td>
-        <%end%>
-        <%if a.participant==""%>
-        <td>/</td>
-        <%else%>
-        <td><%=a.participant %></td>
-        <%end%>
-         <%if a.min_year==nil%>
-        <td>/</td>
-        <%else%>
-        <td><%=a.min_year %></td>
-        <%end%>
-        <%if a.max_year==nil%>
-        <td>/</td>
-        <%else%>
-        <td><%=a.max_year %></td>
-        <%end%>
+        
+        <td><%=a.authors %>&nbsp;&nbsp;<%=a.authors1 %>&nbsp;&nbsp;<%=a.authors2 %></td>
+       
+       
+        <td><%=a.metrix %>&nbsp;&nbsp;<%=a.metrix1 %>&nbsp;&nbsp;<%=a.metrix2 %></td>
+        
+        <td><%=a.status %>&nbsp;&nbsp;<%=a.status1 %>&nbsp;&nbsp; <%=a.status2 %></td>
+        
+        <td><%=a.research_method %>&nbsp;&nbsp;<%=a.research_method1 %>&nbsp;&nbsp;<%=a.research_method2 %></td>
+        
+        <td><%=a.participant %>&nbsp;&nbsp;<%=a.participant1 %>&nbsp;&nbsp;<%=a.participant2 %></td>
+        
+        <td><%=a.min_year %>&nbsp;&nbsp;<%=a.min_year1 %>&nbsp;&nbsp;<%=a.min_year2 %></td>
+        
+        <td><%=a.max_year %>&nbsp;&nbsp;<%=a.max_year1 %>&nbsp;&nbsp;<%=a.max_year2 %></td>
+      
        
         
       </tr>

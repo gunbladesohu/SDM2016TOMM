@@ -25,7 +25,10 @@ class Sousuo1sController < ApplicationController
          params.require(:sousuo1).permit(:title, :research_method, :min_year, :max_year,:authors,
          :journal,:participant,:notincludemethod,:notincludeparticipant,:status,:metrix,:notincludestatus,:notincludemetrix,
          :title1, :research_method1, :min_year1, :max_year1,:authors1,
-         :journal1,:participant1,:notincludemethod1,:notincludeparticipant1,:status1,:metrix1,:notincludestatus1,:notincludemetrix1)
+         :journal1,:participant1,:notincludemethod1,:notincludeparticipant1,:status1,:metrix1,:notincludestatus1,:notincludemetrix1,
+         :title2, :research_method2, :min_year2, :max_year2,:authors2,
+         :journal2,:participant2,:notincludemethods2,:notincludeparticipant2,:status2,:metrix2,:notincludestatus2,:notincludemetrix2)
+    
     end 
   
 
