@@ -14,9 +14,9 @@
 <li><%=link_to "Advanced search",new_sousuo1_path %></li></ul>
 </td>
 <td >
-    <button class="columnbutton btn btn-primary "><span>Click To Display </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-arrow-left spanarrow"></span></button>
-    <div style="border:2px gray solid;margin-left:42px"class="columntable">
-        <table>
+    <button class="columnbutton btn btn-primary "><span>Toggle Columns </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-arrow-down spanarrow"></span></button>
+  
+        <table style="border:2px gray solid;" class="columntable">
   <tr><td><label class="checkbox-inline">
       <input type="checkbox" class="title" checked="checked">Title
     </label></td><td>
@@ -147,12 +147,12 @@
     $('.columnbutton').click(function(){
          if( flag == false){
        $('.columnbutton').empty();
-       $('.columnbutton').append("<span>Click To Display </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class='glyphicon glyphicon-arrow-down'></span>");
+       $('.columnbutton').append("<span>Toggle Columns </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class='glyphicon glyphicon-arrow-left'></span>");
        flag = true;
     }
     else{
         $('.columnbutton').empty();
-       $('.columnbutton').append("<span>Click To Display </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-arrow-left'></span>");
+       $('.columnbutton').append("<span>Toggle Columns </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-arrow-down'></span>");
        flag = false;
     }
   $('.columntable').toggle();
