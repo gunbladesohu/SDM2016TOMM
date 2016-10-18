@@ -197,7 +197,7 @@ def sousuo1_books
      end
      end
      
-     if(notincludestatus1)
+     if(notincludestatus2)
        if status2.present?
               flag2=true
       books2=books2.where(["paper_status Not Like ?",status2])
