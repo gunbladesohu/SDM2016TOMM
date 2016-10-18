@@ -51,8 +51,8 @@ RSpec.describe BooksController, type: :controller do
       expect(assigns(:book)).to eq(book)
     end
     #   it "renders the :show template "  do
-    #   sousuo1 = create(:sousuo1)
-    #   get :show, id: sousuo1
+    #   book = create(:book)
+    #   get :show, id: book
     #   expect(response).to render_template :show
     # end
   end
