@@ -10,26 +10,6 @@ end
     click_button("Search")  
   end
 
-  # When(/^user selects research method on the search serler page$/) do 
-  #   pending # Write code here that turns the phrase above into concrete actions
-  # end
-
-  # When(/^user selects date range on the search serler page$/) do
-  #   pending # Write code here that turns the phrase above into concrete actions
-  # end
-
-  # When(/^user selects author on the search serler page$/) do
-  #   pending # Write code here that turns the phrase above into concrete actions
-  # end
-
-  # When(/^user selects credibility rating on the search serler page$/) do
-  #   pending # Write code here that turns the phrase above into concrete actions
-  # end
-
-  # When(/^user selects benefit on the search serler page$/) do
-  #   pending # Write code here that turns the phrase above into concrete actions
-  # end
-
   # When(/^user clicks search button on the search serler page$/) do
   #   visit root_path
   # end
