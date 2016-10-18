@@ -230,5 +230,9 @@ def sousuo1_books
       if (flag==true and flag1==true and flag2==false)
       return books+books1
       end
+      if (flag==false and flag1==false and flag2==false)
+      return books
+      end
+      
 end
 end
