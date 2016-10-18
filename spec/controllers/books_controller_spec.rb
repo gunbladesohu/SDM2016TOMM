@@ -41,10 +41,23 @@ RSpec.describe BooksController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
-    
+     it "has a 200 status code" do
+      get :index
+      expect(response.status).to eq(200)
+   
+  end
+      it "return the books template" do
+      get :index
+      expect(response).to render_template("index")
+    end
   end
 
   describe "GET #show" do
+    # it "returns http success" do
+    #   book = create(:book)
+    #   get :show, id: book
+    #   expect(response).to have_http_status(:success)
+    # end
     it "assigns the requested book as @book" do
       book = Book.create! valid_attributes
       get :show, params: {id: book.to_param}, session: valid_session
@@ -55,12 +68,14 @@ RSpec.describe BooksController, type: :controller do
     #   get :show, id: book
     #   expect(response).to render_template :show
     # end
-  end
-    describe "GET index" do
-    it "has a 200 status code" do
-      get :index
-      expect(response.status).to eq(200)
-    end
+ 
+    
+  #   it "has a 200 status code" do
+  #     book = create(:book)
+  #     get :show, id: book
+  #     expect(response.status).to eq(200)
+   
+  # end
   end
 
   describe "GET #new" do
