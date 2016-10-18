@@ -2,8 +2,12 @@ Given(/^user is logged in and sees the search page$/) do
   visit books_path
 end
   
-  When(/^user enters search keyword on the search serler page$/) do 
-    pending # Write code here that turns the phrase above into concrete actions
+  When(/^user enters search keyword (.*?) on the search serler page with (.*?)$/) do  |text_field_tag, text|
+    fill_in("search", with: text)
+  end
+  
+  When(/^user clicks search button on the search serler page$/) do
+    click_button("Search")  
   end
 
   # When(/^user selects research method on the search serler page$/) do 
@@ -26,9 +30,9 @@ end
   #   pending # Write code here that turns the phrase above into concrete actions
   # end
 
-  When(/^user clicks search button on the search serler page$/) do
-     visit root_path
-  end
+  # When(/^user clicks search button on the search serler page$/) do
+  #   visit root_path
+  # end
 
   Then(/^user should see the search records$/) do
     
