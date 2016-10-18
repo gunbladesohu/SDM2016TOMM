@@ -7,13 +7,15 @@ script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 - bundle exec rspec
-- bundle exec rake assets:precompile RAILS_ENV=production
+- bundle exec cucumber
 # - "DISPLAY=:99.0 bundle exec cucumber"
 deploy:
   provider: heroku
   api_key:
     secure: VRPCxon1UbvvyOaL2I0NIPiKO167/y7WrAv7tT9Ky65m9ot20dvY5uEyRtozDvV4oxlwu7qjBnybHc0mT38H8SWxxBKDwuT8oN5RqTTyqs+fjVlMlzy01hQtNY/2cBjiBEMVPsZuvT7gCqPwYETILLWrlBQyukS88bVWG9Mma1BBICMLdBlKXkYQO8Umr45Om9ya0kLYrY0OC8Ow8/vaZ+kbDMfaipaEnmks0c8OXJbVbuFU3hP0lm0NqC6X5B0rcNr8P1rXhGG1eWVjnQpJpe7U5Pq75QlDSIHaCqckUkS8ZUlFUvdDuzMjIDpuT7CFPc72jp6vg+RbpBt4rwIfAxIcZPwyEEYGt/DQaDikz8WxPtaVq/JqS336MRArNg7HQ6UjoNaVCWj7Bxuzcb7qN6OKb2SHYV7gxQ7ikc+yD1zJchiIkKIyYF2Nr6M/IaMGmDP5RX2JKOa/bbO5REEB7tqZDhh7hPVzDxzUHJsqeFdyPXe5mpv3WsniI+UxiOvJXMJ78i7TIDmXgh5+MVgACF5IpJ9L9IADWUjMXsf7OkJXlgdaoAt13CNfMTeTN0HtH6QpB+VzsKvRr8TjTNR/ErGlCQEQRQKgXz/czElwqMk4DC+MbMcebaC+XLVSbAS9AQvRjt48u04tnwJNl9SGJHTPo5NR6x8gJ3sGxUp5XjU=
   app: tommserler
+  run:
+   - bundle exec rake assets:precompile RAILS_ENV=production
   on:
     repo: gunbladesohu/SDM2016TOMM
     branch: develop
