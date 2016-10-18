@@ -77,7 +77,21 @@ RSpec.describe BooksController, type: :controller do
    
   # end
   end
-
+describe "GET #newindex" do
+   it "returns http success" do
+      get :newindex
+      expect(response).to have_http_status(:success)
+    end
+     it "has a 200 status code" do
+      get :newindex
+      expect(response.status).to eq(200)
+   
+  end
+      it "return the books template" do
+      get :newindex
+      expect(response).to render_template("newindex")
+    end
+  end
   describe "GET #new" do
     # it "assigns a new book as @book" do
     #   get :new, params: {}, session: valid_session
