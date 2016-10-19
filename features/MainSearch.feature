@@ -7,11 +7,6 @@
 Feature: Search SERLER 
   Scenario: user sees the search page and search SERLER
     Given user is logged in and sees the search page
-    When user enters search keyword abc on the search serler page with abc
+    When user enters search keyword Waterfall on the search serler page with Waterfall
     When user clicks search button on the search serler page
-     # And user selects research method on the search serler page
-        # And user selects date range on the search serler page
-        # And user selects author on the search serler page
-        # And user selects credibility rating on the search serler page
-        # And user selects benefit on the search serler page
-    Then user should see the search records
+    Then user should see the search records 
