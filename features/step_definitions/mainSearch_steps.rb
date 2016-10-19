@@ -14,7 +14,8 @@ end
   #   visit root_path
   # end
 
-  Then(/^user should see the search records$/) do
+  Then(/^user should see the search records$/) do 
+  #Then(/^user should see the search records with Waterfall (.*?) $/) do |text|
     
     expect(page).to have_content("Show")
 
